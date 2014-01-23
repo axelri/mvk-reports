@@ -1,0 +1,61 @@
+\documentclass[a4paper,10pt,twoside,fleqn]{article}
+
+\usepackage[inner=4cm,top=4cm,outer=3cm,bottom=4cm]{geometry}
+\usepackage[parfill]{parskip} % radbyte mellan paragrafer
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{float} % bilder i paragrafer
+\usepackage{verbatim} % lägg in kodfiler
+\usepackage[labelformat=empty]{caption} % bildtext
+\ifxetex
+	% i xetex behövs inga fulhack för åäö
+\else
+	% åäö-hax för icke-xelatex
+	\usepackage[utf8]{inputenc}
+	% Fixar så man kan ha åäö i kodkommentarer
+	\lstset{literate={ö}{{\"o}}1
+		{ä}{{\"a}}1
+		{å}{{\aa}}1
+		{Ö}{{\"O}}1
+		{Ä}{{\"A}}1
+		{Å}{{\AA}}1
+	}
+\fi
+
+% Header och footer
+\pagestyle{fancy}\headheight 13pt
+%\lhead{\course\ -\ Inlämning \homeworknumber}
+%\rhead{\theauthor\ -\ \thedate}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\input{config.tex}
+\input{title.tex}
+
+\begin{document}
+
+% Labbcover + clearpage för blank baksida bakom den
+\thispagestyle{empty}
+\titleGM
+\clearpage
+\thispagestyle{empty}
+\mbox{} % empty page for duplex
+\clearpage 
+
+% Huvudinlämning
+\setcounter{page}{1}
+\section*{Abstract}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\begin{flushleft} % vänsterjustera
+\end{flushleft}
+\end{document}

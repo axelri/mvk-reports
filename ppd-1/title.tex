@@ -1,0 +1,19 @@
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\titleGM}{\begingroup % Create the command for including the title page in the document
+\hbox{ % Horizontal box
+\hspace*{0.1\textwidth} % Whitespace to the left of the title page
+\parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+
+{\noindent\Huge\bfseries \thetitle \\[0.5\baselineskip] \groupname}\\[2\baselineskip] % Title
+
+{\large \version \\[\baselineskip] Printed \thedate}\\[2\baselineskip] 
+
+\begin{doublespace}
+{\Large \groupmembers} % Author name
+\end{doublespace}
+
+}}
+\endgroup}
