@@ -2,25 +2,27 @@
 
 \usepackage[inner=4cm,top=4cm,outer=3cm,bottom=4cm]{geometry}
 \usepackage[parfill]{parskip} % line skip between paragraphs instead of indents
-\usepackage[T1]{fontenc}
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{setspace} % dynamic line spacing
+\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks
 \usepackage{float} % picture placing
 \usepackage{verbatim} % insert files verbatim
 \usepackage[labelformat=empty]{caption} % picture captions
 \ifxetex
+  \usepackage{fontspec}
 	% i xetex behövs inga fulhack för åäö
 \else
 	% åäö-hax för icke-xelatex
 	\usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
 \fi
 
 % Header and footer
 \pagestyle{fancy}\headheight 13pt
-\fancyfoot{}
+\fancyfoot{} % reset footer format
 \fancyfoot[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
