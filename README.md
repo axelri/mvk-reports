@@ -11,7 +11,7 @@ Använder du Mac/Linxu cd:ar du in till rätt mapp och skriver bara ```make```, 
 
 #### Vid kaos
 
-Det vanligaste felet är att korsreferenser eller innehållsförteckningar blir konstiga. Kompilerar man en gång till brukar det lösa sig. Det andra vanliga felet som kan uppstå är att man inte har alla latex-paket som filen använder sig av (de som finns under ```\usepackage{<package>}```). Man kan ofta ladda ner enskilda paket genom en pakethanterare, som följde med MikTex eller MacTex. I ubuntu man kan hantera paket genom kommandot ```tlmgr```.
+Det vanligaste felet är att korsreferenser eller innehållsförteckningar blir konstiga. Kompilerar man en gång till brukar det lösa sig. Du kan också prova kommandot ```make force```, som rensar upp gamla filer och kompilerar pdf:en åt dig i flera pass. Det andra vanliga felet som kan uppstå är att man inte har alla latex-paket som filen använder sig av (de som finns under ```\usepackage{<package>}```). Man kan ofta ladda ner enskilda paket genom en pakethanterare, som följde med MikTex eller MacTex. I ubuntu man kan hantera paket genom kommandot ```tlmgr```.
 
 ### Hjälp
 
