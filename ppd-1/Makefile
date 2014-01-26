@@ -1,13 +1,15 @@
 LATEX?=xelatex
 LATEXFLAGS+=-file-line-error
 
-.PHONY: default distclean clean
+.PHONY: default force distclean clean
 
 default: report.pdf
 
 report.pdf: *.tex
-	rm -f *.aux # have to clean in order to switch engine
 	$(LATEX) $(LATEXFLAGS) report
+
+force: clean
+	$(LATEX) $(LATEXFLAGS) report && $(LATEX) $(LATEXFLAGS) report && $(LATEX) $(LATEXFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
