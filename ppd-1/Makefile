@@ -1,5 +1,6 @@
 LATEX?=xelatex
 LATEXFLAGS+=-file-line-error
+FORCEFLAGS?=-halt-on-error
 
 .PHONY: default force distclean clean
 
@@ -9,7 +10,7 @@ report.pdf: *.tex
 	$(LATEX) $(LATEXFLAGS) report
 
 force: clean
-	$(LATEX) $(LATEXFLAGS) report && $(LATEX) $(LATEXFLAGS) report && $(LATEX) $(LATEXFLAGS) report
+	$(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
