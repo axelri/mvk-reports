@@ -7,7 +7,7 @@ FORCEFLAGS?=-halt-on-error
 
 default: report.pdf
 
-report.pdf: *.tex
+report.pdf: *.tex *.pdf
 	$(LATEX) $(LATEXFLAGS) report
 
 force: clean
