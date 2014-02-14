@@ -1,6 +1,5 @@
 \documentclass[a4paper,10pt]{article}
 
-\usepackage[swedish]{babel}
 \usepackage[inner=3cm,top=3cm,outer=3cm,bottom=3cm]{geometry}
 \usepackage[parfill]{parskip} % line skip between paragraphs instead of indents
 \usepackage{fancyhdr}
@@ -9,18 +8,26 @@
 \usepackage{xcolor}
 \usepackage{color, colortbl}
 \usepackage{setspace} % dynamic line spacing
-\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks
 \usepackage{float} % picture placing
 \usepackage{verbatim} % insert files verbatim
 \usepackage[labelformat=empty]{caption} % picture captions
 \ifxetex
+  % babel for xetex
   \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{swedish}
 	% i xetex behövs inga fulhack för åäö
 \else
 	% åäö-hax för icke-xelatex
+  \usepackage[swedish]{babel}
 	\usepackage[utf8]{inputenc}
   \usepackage[T1]{fontenc}
 \fi
+\usepackage[style=authoryear,backend=biber]{biblatex} % harvard citing, modern backend
+\usepackage{csquotes} % language aware quoting
+\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks, must be loaded last
+
+\bibliography{reference} % link to bibliography bib file
 
 % Header and footer
 \pagestyle{fancy}\headheight 13pt
@@ -67,6 +74,7 @@
 \input{risk.tex}
 \input{plan.tex}
 \input{feasibility.tex}
+\printbibliography[heading=bibnumbered] % bibliography in table of contents
 % references to be added
 \input{appendix.tex}
 \end{flushleft}

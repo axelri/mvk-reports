@@ -1,4 +1,5 @@
-LATEX?=xelatex
+LATEX?=pdflatex
+BIBTEX?=biber
 LATEXFLAGS+=-file-line-error
 FORCEFLAGS?=-halt-on-error
 
@@ -10,7 +11,7 @@ report.pdf: *.tex
 	$(LATEX) $(LATEXFLAGS) report
 
 force: clean
-	$(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report
+	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
