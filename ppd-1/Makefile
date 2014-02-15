@@ -7,7 +7,7 @@ FORCEFLAGS?=-halt-on-error
 
 default: report.pdf
 
-report.pdf: *.tex catalog.pdf
+report.pdf: *.tex catalog.pdf metafam.pdf
 	$(LATEX) $(LATEXFLAGS) report
 
 force: clean
