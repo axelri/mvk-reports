@@ -1,17 +1,21 @@
 \section{Bakgrund}
 \subsection{Kommersiell bakgrund}
-På grund av begränsningar är det relativt få som försökt sig på att lansera en skärminspelare till Android. Det är först i den senaste versionen av Android som möjligheten att spela in vad som händer på skärmen finns och då endast i utvecklingssyfte \parencite{kitkat}. Det krävs att mobilen är kopplad till en dator via USB och detta är främst tänkt att användas för att göra instruktionsfilmer och dylikt.
+På grund av begränsningar i operativsystemet är det relativt få som försökt sig på att lansera en skärminspelare till Android. Det är först i den senaste versionen av Android som möjligheten att spela in vad som händer på skärmen finns och då endast i utvecklingssyfte \parencite{kitkat}. Det krävs att mobilen är kopplad till en dator via USB och detta är främst tänkt att användas för att göra instruktionsfilmer och dylikt.
 
 \subsubsection{TestFairy}
-TestFairy är ett företag med målet att underlätta betatestning av Androidappar. Genom att använda sig av deras lösning kan man få en video som visar hur användaren navigerar i appen, grafer över diverse intressanta data (Exempelvis minnes- och CPU-prestanda), samt en mängd metadata.
+TestFairy är ett företag med en affärsidé som påminner om den The Beta Family har. Målet är att underlätta betatestning av Androidapplikationer. Genom att använda sig av deras lösning kan man få en video som visar hur användaren navigerar i appen, grafer över diverse intressanta data (Exempelvis minnes- och CPU-prestanda), samt en mängd metadata.
 
-Problemet med att Android inte har stöd för skärminspelning löser TestFairy genom att ta en skärmdump en gång i sekunden. Detta resulterar i en video som snarare påminner om ett bildspel än en rullande video. Dessutom förlorar man information om hur användaren reagerar på ljud från appen. Den visar dock det väsentliga användaren håller på med och ger i det stora hela en god överblick över hur appen används.
+Problemet med att Android inte har stöd för skärminspelning löser TestFairy genom att ta en skärmdump en gång i sekunden. Detta resulterar dock i en video som snarare påminner om ett bildspel än en rullande video. Dessutom förlorar man information om hur användaren reagerar på ljud från appen. Den visar dock det väsentliga användaren håller på med och ger i det stora hela en god överblick över hur appen används.
 
-TestFairy verkar fokusera mer på den tekniska aspekten av en app. Fokus ligger på att finna  prestandaproblem snarare än att hitta problem i människa-dator-interaktionen. 
+Jämfört med The Beta Family verkar TestFairy vilja fokusera mer på den tekniska aspekten av en app. Fokus ligger på att finna  prestandaproblem snarare än att hitta problem i människa-dator-interaktionen. 
+
+TestFairys betatestning går till som så att man laddar upp sin .apk-fil\footnote{Installationsfilen för applikationen}, väljer vilka testare man vill skicka ut till och sedan väntar man på resultatet. Detta underlättar för utvecklaren som inte behöver oroa sig över hur man implementerar TestFairys SDK\footnote{The Beta Familys iOS-testning förlitar sig på att utvecklaren själv implementerar deras SDK} men en nackdel är att TestFairy inte har en krets med testare. The Beta Family har i dagsläget cirka 9 000 testare medan man i TestFairys fall får förlita sig på att man känner tillräckligt många vänner som vill testa appen.
 
 \subsubsection{Diverse appar som kräver root-access}
 Det finns en mängd appar som möjliggör inspelning av mobilskärmen men dessa kräver root-access. Att skaffa root-access är något som kräver en viss kunskap och innebär en viss säkerhetsrisk då man låser upp hela mobilen, ungefär som ett adminkonto i Windows. Detta innebär att dessa appar är svåra att använda i betatestningssyfte då man som företag inte kan kräva att alla betatestare rootar sina mobiler. Dessutom är det oftast mer avancerade användare som rootar sina mobiler och i betatestning är sannolikheten stor att man inte bara vill ha återkoppling från avancerade användare. 
 
-The Beta Family har krav på att den SDK vi levererar inte kräver root så även om dessa appar gör precis det vi ska försöka göra måste vi hitta en alternativ lösning. Exempel på dessa appar är \emph{SCR Screen Recorder} \parencite{scr} och \emph{Screen Recorder} \parencite{sr}
+Eftersom dessa appar inte primärt är tänkta för betatestning går det inte uttala sig om deras lämplighet i sådana situationer. Appar har i regel inte tillåtelse att ta bilder av andra appars vyer så en app för betatestning skulle inte fungera utan det krävs någon form utav SDK. Apparna utför en delmängd (skärminspelning) utav det som detta projekt syftar genomföra men vissa delar (röstinspelning och kamerainspelning) saknas.
+
+ Exempel på dessa appar är \emph{SCR Screen Recorder} \parencite{scr} och \emph{Screen Recorder} \parencite{sr}
 
 \subsection{Teknisk bakgrund}
