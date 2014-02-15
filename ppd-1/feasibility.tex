@@ -6,12 +6,14 @@ Kravet att mobilen inte får vara ``rootad'' (förklarad i \ref{rootacc}) sänke
 Detta gör att gruppen endast är förmögen att skriva en SDK som bara kan spara grafiken som hör till den testade applikationen. Exempelvis tangentbord, webbläsare och andra inbyggda systemmoduler verkar inte gå att fånga i nuläget. Även hastigheten kan komma att bli begränsad, i förhållande till vad som skulle vara möjligt med ``root''-behörighet. Troligen kommer prestanda och funktion att ha svårt att överskrida \textit{TestFairy}, som behandlas i \ref{testfairy}. Nöjar arbetsgivaren sig med den kvalitetsnivån är kravet dock genomförbart, då \textit{TestFairy} inte kräver någon ``root''-behörighet.
 
 \subsubsection{Mjukvaran måste vara skriven i Java}
-Alla gruppens medlemmar har gått samma introduktionskurs i datalogi, vilken till stor del behandlar språket java \parencite{inda}. Språket Java används som en grundsten i Android-plattformen, och Androids officiella API\footnote{Protokoll för ett program att kommunicera med andra program} är skrivet just i Java \parencite{adoc}. 
+Alla gruppens medlemmar har gått samma introduktionskurs i datalogi, vilken till stor del behandlar språket java \parencite{inda}. Språket Java används som en grundsten i Android-plattformen, och Androids officiella API\footnote{Protokoll för ett program som ska kommunicera med andra program} är skrivet just i Java \parencite{adoc}. 
 
 % TODO: citera föregående kapitel
 Detta officiella API innehåller tillräcklig programkod för att spela in ljud och film, spara fingerrörelser över tid samt ta delvis täckande skärmdumpar. Med bakgrund av gruppmedlemmarnas erfarenheter i Java, samt de möjligheter som Androids Java-API erbjuder, kan kravet klassas som genomförbart.
 
 \subsubsection{SDK:n måste vara enkel att integrera}
+Helst av allt ska SDK:n leva upp till den nuvarande versionen för iOS, som ska gå att integrera på ca 2 minuter \parencite{superrec}. Enligt nuvarande implementationsplaner behöver bara SDK:n länkas till ett objekt från den applikation som ska testas, nämligen rot-vyn\footnote{Den mest täckande grafiska representationen av applikationen}. Att göra detta är i stort sett en trivialitet, så länge applikationsutvecklaren som vill testa sitt program kan ändra fritt i sin egen källkod. Kravet borde därför vara i högsta grad genomförbart.
+
 \subsubsection{Information som måste skickas med}
 \subsubsection{Användarens ansikte och röst ska kunna spelas in}
 \subsubsection{Informationen ska presenteras som ett tidsflöde}
