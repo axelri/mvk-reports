@@ -1,25 +1,36 @@
 \documentclass[a4paper,10pt]{article}
 
-\usepackage[swedish]{babel}
 \usepackage[inner=3cm,top=3cm,outer=3cm,bottom=3cm]{geometry}
 \usepackage[parfill]{parskip} % line skip between paragraphs instead of indents
 \usepackage{fancyhdr}
 \usepackage{fancyvrb}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{color, colortbl}
 \usepackage{setspace} % dynamic line spacing
-\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks
 \usepackage{float} % picture placing
+\usepackage{caption}
 \usepackage{verbatim} % insert files verbatim
+\usepackage{pdfpages} % import raw pdf
+\usepackage[toc,page]{appendix}
 \usepackage[labelformat=empty]{caption} % picture captions
 \ifxetex
+  % babel for xetex
   \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{swedish}
 	% i xetex behövs inga fulhack för åäö
 \else
 	% åäö-hax för icke-xelatex
+  \usepackage[swedish]{babel}
 	\usepackage[utf8]{inputenc}
   \usepackage[T1]{fontenc}
 \fi
+\usepackage[style=authoryear,backend=biber]{biblatex} % harvard citing, modern backend
+\usepackage{csquotes} % language aware quoting
+\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks, must be loaded last
+
+\bibliography{reference} % link to bibliography bib file
 
 % Header and footer
 \pagestyle{fancy}\headheight 13pt
@@ -51,8 +62,7 @@
 % generated automatically
 % from \section commands
 \thispagestyle{empty}
-\renewcommand*\contentsname{Innehåll}
-\tableofcontents
+\tableofcontents % babel/polyglossia fixar språket
 \clearpage
 
 % document change record
@@ -66,6 +76,7 @@
 \input{risk.tex}
 \input{plan.tex}
 \input{feasibility.tex}
+\printbibliography[heading=bibintoc] % bibliography in table of contents
 % references to be added
 \input{appendix.tex}
 \end{flushleft}
