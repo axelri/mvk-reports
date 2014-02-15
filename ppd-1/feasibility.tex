@@ -1,6 +1,10 @@
 \section{Genomförbarhetsstudie}
 \subsection{Kravlista}
 \subsubsection{Mobilen får inte vara ``rootad''}
+Kravet att mobilen inte får vara ``rootad'' (förklarad i \ref{rootacc}) sänker dessvärre möjligheterna att kunna implentera en snabb och täckande skärminspelare. Utan ``root''-behörighet kan tredjepartsutvecklare inte komma åt den centrala grafiska modulen i Android \parencite{adoc}, och kan därför varken utnyttja systemets snabbhet eller kunna fånga en heltäckande bild av skärmen. Även om det tekniskt skulle vara mycket enkelt att släppa denna behörighet fri även från tredjepartsutvecklare, har Google gjort det klart att det inte ligger i deras intresse för närvarande \parencite{uhno}.
+
+Detta gör att gruppen endast är förmögen att skriva en SDK som bara kan spara grafiken som hör till den testade applikationen. Exempelvis tangentbord, webbläsare och andra inbyggda systemmoduler verkar inte gå att fånga i nuläget. Även hastigheten kan komma att bli begränsad, i förhållande till vad som skulle vara möjligt med ``root''-behörighet. Troligen kommer prestanda och funktion att ha svårt att överskrida \textit{TestFairy}, som behandlas i \ref{testfairy}. Nöjar arbetsgivaren sig med den kvalitetsnivån är kravet dock genomförbart, då \textit{TestFairy} inte kräver någon ``root''-behörighet.
+
 \subsubsection{Mjukvaran måste vara skriven i Java}
 \subsubsection{SDK:n måste vara enkel att integrera}
 \subsubsection{Information som måste skickas med}
