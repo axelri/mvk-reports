@@ -15,6 +15,9 @@ Detta officiella API innehåller tillräcklig programkod för att spela in ljud 
 Helst av allt ska SDK:n leva upp till den nuvarande versionen för iOS, som ska gå att integrera på ca 2 minuter \parencite{superrec}. Enligt nuvarande implementationsplaner behöver bara SDK:n länkas till ett objekt från den applikation som ska testas, nämligen rot-vyn\footnote{Den mest täckande grafiska representationen av applikationen}. Att göra detta är i stort sett en trivialitet, så länge applikationsutvecklaren som vill testa sitt program kan ändra fritt i sin egen källkod. Kravet borde därför vara i högsta grad genomförbart.
 
 \subsubsection{Information som måste skickas med}
+Specifikt måste telefonmodell, skärmstorlek och skärmorientering skickas till arbetsgivarens server från SDK:n. Detta har behandlats i \ref{subsubsec:Metadata}. Även information om fingertryck och -gester ska skickas med. 
+% TODO: citera fintertryckdelen
+
 \subsubsection{Användarens ansikte och röst ska kunna spelas in}
 \subsubsection{Informationen ska presenteras som ett tidsflöde}
 \subsubsection{En serverapplikation som behandlar och presenterar datan}
