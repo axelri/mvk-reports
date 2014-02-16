@@ -6,7 +6,7 @@ Kravet att mobilen inte får vara ``rootad'' (förklarad i \ref{rootacc}) sänke
 Detta gör att gruppen endast är förmögen att skriva en SDK som bara kan spara grafiken som hör till den testade applikationen. Exempelvis tangentbord, webbläsare och andra inbyggda systemmoduler verkar inte gå att fånga i nuläget. Även hastigheten kan komma att bli begränsad, i förhållande till vad som skulle vara möjligt med ``root''-behörighet. Troligen kommer prestanda och funktion att ha svårt att överskrida \textit{TestFairy}, som behandlas i \ref{testfairy}. Nöjar arbetsgivaren sig med den kvalitetsnivån är kravet dock genomförbart, då \textit{TestFairy} inte kräver någon ``root''-behörighet.
 
 \subsubsection{Mjukvaran måste vara skriven i Java}
-Alla gruppens medlemmar har gått samma introduktionskurs i datalogi, vilken till stor del behandlar språket java \parencite{inda}. Språket Java används som en grundsten i Android-plattformen, och Androids officiella API\footnote{Protokoll för ett program som ska kommunicera med andra program} är skrivet just i Java \parencite{adoc}. 
+Alla gruppens medlemmar har gått samma introduktionskurs i datalogi, vilken till stor del behandlar språket Java \parencite{inda}. Språket Java används som en grundsten i Android-plattformen, och Androids officiella API\footnote{Protokoll för ett program som ska kommunicera med andra program} är skrivet just i Java \parencite{adoc}. 
 
 % TODO: citera föregående kapitel
 Detta officiella API innehåller tillräcklig programkod för att spela in ljud och film, spara fingerrörelser över tid samt ta delvis täckande skärmdumpar. Med bakgrund av gruppmedlemmarnas erfarenheter i Java, samt de möjligheter som Androids Java-API erbjuder, kan kravet klassas som genomförbart.
@@ -22,8 +22,11 @@ Specifikt måste telefonmodell, skärmstorlek och skärmorientering skickas till
 % TODO: citera background
 
 \subsubsection{Informationen ska presenteras som ett tidsflöde}
+Som behandlats i \ref{subsubsec:Datarepresenatation} finns många bra verktyg för en sekventiell, högupplöst datarepresenation. Det finns dock en risk att skärminspelningens låga frekvens kan ha en negativ inverkan på informationsförmedlingen. Att skapa ett flöde av information från den insamlade datan verkar dock möjligt med befintliga kunskaper och verktyg.
+% TODO: citera risk
 
-\subsubsection{En serverapplikation som behandlar och presenterar datan}
+\subsubsection{En serverapplikation som behandlar och presenterar datan
+
 \subsection{Sidouppgifter}
 \subsubsection{SDK:n ska vara så lik iOS-versionen som möjligt}
 \subsubsection{Tredjeparts-program ska kunna spelas in}
