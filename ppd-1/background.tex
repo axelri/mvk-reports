@@ -35,6 +35,12 @@ Android har denna arkitektur på grund av säkerhetsskäl. En applikation som ex
 \label{subsubsec:Metadata}
 I projektet ingår att samla in metadata om den mobiltelefon som testaren använder. Specifikt ingår i kravlistan att ta reda på testarens telefonmodell och skärmstorlek, samt kontinuerligt skicka med testarens skärmorientering. Det finns goda möjligheter att enkelt begära fram dessa data ur det officiella Android-API:t genom modulerna \textit{Build}, \textit{view.WindowManager} och \textit{app.Activity}. Åtkomst till dessa kräver endast grundläggande utvecklarbehörigheter \parencite{adoc}.
 
+\subsubsection{Datapresentation}
+\label{subsubsec:Datapresenatation}
+Insamlade data ska presenteras som ett flöde av information som gestaltar testarens användarmönster. Upprepade skärmdumpar ska tillsammans med testarens fingeravtryck bli till en video. Tillsammans med kamera- och ljudupptagning på testaren ska beställaren av testningen enkelt kunna bilda sig en uppfattning om hur produkten används.
+
+Androids officiella API inkluderar en klocka med en upplösning på nanosekunder, \textit{System.nanoTime()} \parencite{adoc}. Klockan borde räcka gått och väl för att synkronisera kamera- och ljudupptagning med fingeravläsning och skärminspelning. Med samma klocka kan man trivialt spara tidsdata för varje skärmdump som tas, samt för varje fingerrörelse testaren gör. Man kan då representera testarens handlingar genom att ``måla över'' skärmdumparna med linjer som representarer fingerrörelser. Denna typ av enklare bildbehandlingsverktyg finns inbyggd i Android, i modulen \textit{Canvas} \parencite{adoc}. Dessa ihopslagna bilder kan sedan konverteras till en video med hjälp av den inbyggda modulen \textit{media.MediaCodec} \parencite{adoc}. Skulle det visa sig att \textit{media.MediaCodec} inte är kraftfull nog för våra ändamål finns även det fria alternativet \textit{ffmpeg} tillgängligt på Android \parencite{roman10}.
+
 \subsubsection{Back- och front-end}
 En back-end behövs för att ta emot datan som generas efter att en användare har betatestat en applikation och en front-end behövs för att presentera denna data för utvecklarna. Arbetsgivarna The Beta Family har redan en iOS-version av denna SDK med tillhörande back-end och front-end. Deras rekommendation är att det här projektet ska ha en egen miljö så att det inte uppstår ett beroende av deras kod, då data som generas i Android är annorlunda mot den som genereras i iOS. Dock bör samma ramverk som deras system är byggda på användas för att förenkla en senare integrering. Dessa ramverk är:
 
