@@ -11,7 +11,7 @@ report.pdf: *.tex catalog.pdf metafam.pdf
 	$(LATEX) $(LATEXFLAGS) report
 
 force: clean
-	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report
+	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
