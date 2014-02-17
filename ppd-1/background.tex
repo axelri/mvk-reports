@@ -80,3 +80,6 @@ Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med
 \subsubsection{Kamerainspelning}
 \label{subsubsec:kamerainspelning}
 Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen MediaRecorder \parencite{frontcamera} som nämnts ovan. Frontkameran har ett idnummer som man spelar in ifrån.
+
+\subsubsection{Rörelseinspelning}
+Android har genom klassen \emph{view.MotionEvent}\parencite{motionevent} ett stort stöd för hantering av rörelser. Det är möjligt att få fram all information som kan tänkas vara intressant för detta projekt iochmed denna klass. Denna information måste behandlas så att den kan sparas undan på lämpligt sätt för att sedan läggas till ovanpå skärminspelningen.
