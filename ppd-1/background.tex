@@ -71,11 +71,11 @@ Android har genom klassen \emph{view.MotionEvent}\parencite{motionevent} ett sto
 \label{subsubsec:gui}
 GUI för applikationen är mycket enkel och arbetsgivarnas önskan är att den ska vara så lik iOS-versionen som möjligt. Dubbeltryck med två fingrar drar ner en meny varifrån användaren kan välja att påbörja eller avsluta en inspelning, samt välja inställningar. Bland annat har användaren möjligheten att stänga av kamera- och ljudinspelning och trycksensorens färg kan väljas här. 
 
-Ett alternativ för att skapa menyn är att använda en \textit{dialog}, vilket är et popup-fönster som går att skräddarsy \parencite{dialog}. 
+Ett alternativ för att skapa menyn är att använda en \textit{dialog}, vilket är ett popup-fönster vars innehåll kan skräddarsys \parencite{dialog}. 
 
 Android har inte en inbyggd funktion för registrering av dubbeltryck med två fingrar, men klassen \textit{MotionEvent} samlar tillräckligt mycket information för att man ska kunna skriva en egen klass som kan avgöra om ett sådant dubbeltryck har skett \parencite{dbletap}.
 
-Menyn ska vid visning glida in från skrämens övre del. Detta kan enkelt ordnas med den inbyggda klassen Animation och TranslateAnimation som erbjuder bland annat denna möjlighet tillsammans.
+Menyn ska vid visning glida in från skärmens övre del. Detta kan utföras med de inbyggda klasserna \texit{Animation} och \textit{TranslateAnimation}.
 
 \subsubsection{Back- och front-end}
 \label{subsubsec:backfront}
