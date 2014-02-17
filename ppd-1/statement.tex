@@ -9,20 +9,28 @@ Tjänsten vi ska utveckla fungerar så att utvecklaren lägger upp sin applikati
 Det erbjuds en SDK till iOS men inte till Android så projektet riktar sig till att utveckla en SDK för Android. Eftersom Androidmarknaden är mycket mer differentierad än vad den är på iOS-platformen så uppstår många fler utmaningar att lösa för att slutföra projektet. The Beta Family har även förbestämda krav och önskemål på hur projektet ska utvecklas och därför ger detta projektet en del ramar att hålla sig inom.
 
 
+Krav:
+
 \begin{itemize}
 	\item Android enheten ska ej behöva vara “rooted” vilket betyder att man inte ska behöva ha tillgång till alla processer i enheten utan det ska fungera med begränsad tillgänglighet som kan 	förekomma för normala Android användare.
 	\item Projektets SDK ska vara byggd i Native Java.
 	\item iOS versionen är väldigt enkel och tar endast 2 minuter att applicera och därför bör Android verionen också vara enkel att applicera.
-	\item Inspelningen av skärmen ska ha en stadig bildfrekvens och är en av de första viktiga utmaningarna att testa för att se att projektet är möjligt.
-	\item All beröring av enheten i form av tryck och fingerrörelser på skärmen ska markerar i grönt i enlighet med iOS versionen.
-	\item Telefonens skärmstorlek samt position skall skickas vidare till servern.
-	\item Användarens ansikte och röst skall spelas in och kan skickas in till servern som en separat video om det skulle behövas.
-	\item Kan vi skapa references till OpenGL för att spela in t.ex. spel med en hög bilduppdatering?
+	\item Telefonens modell, skärmens storlek samt position skall skickas tillsammans till servern med information om knapptryck och fingerrörelser.
+	\item Användarens ansikte och röst skall spelas in och kan skickas in till servern som en separat video om det skulle vara nödvändigt.
+	\item På applikationens Front-end så skall vyerna användaren besöker sparas och presenteras på en tidslinje.
+\end{itemize}
+
+Önskemål:
+
+\begin{itemize}
+	\item Applikationens grafiska användargränssnitt borde vara så likt iOS-versionen som möjligt.
+	\item Sensorer likt TestFairy som kan läggas till senare i framtiden.
+	\item Visuell bevakning och jämförelse är framstående funktioner (Se TestFairy).
 	\item Hur spelar vi in vyer på tredjeparts SDK:er t.ex. för Google Maps?
 \end{itemize}
 
 
-Då detta är de grundläggande önskemålen och krav till SDK:n så ska detta utvecklas till Android och inte iOS vilket ger en del begränsningar som vi i projektgruppen inte kan komma förbi pågrund av skillnaderna mellan dessa plattformar. Problem som bra bildfrekvens från kameran är problem som inte går att komma undan. Detta är sådant som vi i projektgruppen har diskuterat och kommit fram till att begränsningarna är något vi inte kan göra något åt och är helt enkelt något vi får arbeta runt och göra en så bra lösning som möjligt.
+Då detta är de grundläggande krav och önskemål till SDK:n så ska detta utvecklas till Android och inte iOS vilket ger en del begränsningar som vi i projektgruppen inte kan komma förbi pågrund av skillnaderna mellan dessa plattformar. Problem som bra bildfrekvens från kameran är problem som inte går att komma undan. Detta är sådant som vi i projektgruppen har diskuterat och kommit fram till att begränsningarna är något vi inte kan göra något åt och är helt enkelt något vi får arbeta runt och göra en så bra lösning som möjligt.
 
 
 När produkten är färdigställd så kommer den att bestå utav en “Front-end” som är det som kommer visas för användaren samt att ta in information från testaren samt utav “Back-end” som är den del som kommer att ta hand om och lagra all information som samlats in efter användning. “Front-end” skall byggas upp av HTML, CSS och JavaScript medan “Back-end” skall byggas upp i PHP med en databas i mySQL. \parencite{catalog}
@@ -44,4 +52,4 @@ Projektet innefattar olika tekniska områden som tillsammans med kursens mål ko
 \end{itemize}
 
 \subsubsection{Framtiden inom teknisk utveckling}
-Den tekniska utvecklingen och i synnerhet mobiltelefoni har under de senaste åren gått framåt i rasande tempo. Fler och fler företag använder sig utav mobilappar för att nå ut till sina kunder med information, tjänster och produkter. Innan dessa mobilappar når marknaden måste de testas. Det som måste testas är tekniken bakom appen och användarvänligheten; hur den tänkta målgruppen reagerar när de använder appen. The Beta Family jobbar med att förmedla testare till apputvecklarna vilket vi tror starkt på eftersom appen kan nå en bredare grupp av testare från olika målgrupper och i mycket större skala än om utvecklarna testa appen själva.
+Den tekniska utvecklingen och i synnerhet mobiltelefoni har under de senaste åren gått framåt i rasande tempo. Fler och fler företag använder mobilappar för att nå ut till sina kunder med information, tjänster och produkter. Innan dessa mobilappar når marknaden måste de testas. Det som måste testas är tekniken bakom appen och användarvänligheten; hur den tänkta målgruppen reagerar när de använder appen. The Beta Family jobbar med att förmedla testare till apputvecklarna vilket vi tror starkt på eftersom appen kan nå en bredare grupp av testare från olika målgrupper och i mycket större skala än om utvecklarna testa appen själva.
