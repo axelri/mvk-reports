@@ -1,7 +1,10 @@
 \section{Bakgrund}
 \subsection{Kommersiell bakgrund}
-\label{subsec:commercial}
-På grund av begränsningar i operativsystemet är det relativt få som försökt sig på att lansera en skärminspelare till Android. Det är först i den senaste versionen av Android som möjligheten att spela in vad som händer på skärmen finns och då endast i utvecklingssyfte \parencite{kitkat}. Det krävs att mobilen är kopplad till en dator via USB och detta är främst tänkt att användas för att göra instruktionsfilmer och dylikt.
+\subsubsection{The Beta Familys affärsidé}
+The Beta Family har som affärsidé att bistå med testare när ett företag önskar betatesta sin smartphoneapplikation. Företaget får då erbjuda en belöning till varje testare som The Beta Family tar en andel av. Det samfund The Beta Family byggt upp gör att de kan erbjuda en mer sömlös betatestning jämfört med konkurrenter. TestFairy är ett företag med liknande affärsidé men där krävs det att utvecklarna själva har tillgång till testare då TestFairy enbart bistår med betatestnngsmjukvara. Genom en SDK för skärminspelning kommer testarna kunna bidra med bättre återkoppling vilket leder till att The Beta Family kan leverera en bättre tjänst för företagen.
+
+\subsubsection{Konkurrens}
+På grund av begränsningar i operativsystemet är det relativt få som försökt sig på att lansera en skärminspelare till Android. Det är först i den senaste versionen utav Android som möjligheten att spela in vad som händer på skärmen finns och då endast i utvecklingssyfte \parencite{kitkat}. Det krävs att mobilen är kopplad till en dator via USB och detta är främst tänkt att användas för att göra instruktionsfilmer och dylikt.
 
 \subsubsection{TestFairy}
 \label{testfairy}
@@ -9,20 +12,30 @@ TestFairy är ett företag med en affärsidé som påminner om den The Beta Fami
 
 Problemet med att Android inte har stöd för skärminspelning löser TestFairy genom att ta en skärmdump en gång i sekunden. Detta resulterar dock i en video som snarare påminner om ett bildspel än en rullande video. Dessutom förlorar man information om hur användaren reagerar på ljud från appen. Den visar dock det väsentliga användaren håller på med och ger i det stora hela en god överblick över hur appen används.
 
-Jämfört med The Beta Family verkar TestFairy vilja fokusera mer på den tekniska aspekten av en app. Fokus ligger på att finna  prestandaproblem snarare än att hitta problem i människa-dator-interaktionen. 
+Jämfört med The Beta Family verkar TestFairy vilja fokusera mer på den tekniska aspekten utav en app. Fokus ligger på att finna  prestandaproblem snarare än att hitta problem i människa-dator-interaktionen. 
 
 TestFairys betatestning går till som så att man laddar upp sin .apk-fil\footnote{Installationsfilen för applikationen}, väljer vilka testare man vill skicka ut till och sedan väntar man på resultatet. Detta underlättar för utvecklaren som inte behöver oroa sig över hur man implementerar TestFairys SDK\footnote{The Beta Familys iOS-testning förlitar sig på att utvecklaren själv implementerar deras SDK} men en nackdel är att TestFairy inte har en krets med testare. The Beta Family har i dagsläget cirka 9 000 testare medan man i TestFairys fall får förlita sig på att man känner tillräckligt många vänner som vill testa appen.
+
+TestFairy riktar sig mot en internationell publik. All information finns på engelska och kärnan i den testdata man får ut är grafer som saknar språk. TestFairy skiljer sig dock från The Beta Family och Lookback i den mån att man inte själv måste veta hur SDK:n ska implementeras. En lägre kunskapsnivå krävs alltså av utvecklaren.
+
+\subsubsection{Lookback}
+\label{lookback}
+Lookbacks lösning liknar på många sätt The Beta Familys. Företaget har i dagsläget bara stöd för iOS och är gratis under pågående betafasen\parencite{lookback}. Hur Lookback planerar att tjäna pengar framgår inte av deras hemsida. Till skillnad från TestFairy får testaren här möjlighet att filma sig själv medan hen använder appen och kan då komma med specifik återkoppling beroende på vad som händer på skärmen. The Beta Family har fortfarande en fördel i att man själv tillhandahåller testare medan Lookback förlitar sig på en tjänst vid namn TestFlight.
+
+Själva betatestet presenteras på ett grafiskt tilltalande sätt. Varje testning (vilken Lookback kallar \emph{experience}) har en tidslinje som visar vilken del av appen de är i, etiketter på testet (såsom ``\emph{app flow}'', ``\emph{power user}'', m.fl), en vy som visar hur de navigerar runt i appen samt en video på användaren. 
+
+Tjänsten är internationell i den mening att alla delar är på engelska. Inget hindrar dock testaren från att använda sig av sitt modersmål vid testning om detta är önskat av företaget. Eftersom Lookback främst riktar sig till utvecklare krävs en viss kunskapsnivå för att använda deras tjänst. Implementationen av SDK:n går snabbt och ska enligt utsago vara simpel men har man utvecklat en app kan det förutsättas att man är en avancerad användare med hyfsat goda kunskaper inom utvecklare.
 
 \subsubsection{Diverse appar som kräver root-access}
 \label{rootacc}
 Det finns en mängd appar som möjliggör inspelning av mobilskärmen men dessa kräver root-access. Att skaffa root-access är något som kräver en viss kunskap och innebär en viss säkerhetsrisk då man låser upp hela mobilen, ungefär som ett adminkonto i Windows. Detta innebär att dessa appar är svåra att använda i betatestningssyfte då man som företag inte kan kräva att alla betatestare rootar sina mobiler. Dessutom är det oftast mer avancerade användare som rootar sina mobiler och i betatestning är sannolikheten stor att man inte bara vill ha återkoppling från avancerade användare. 
 
-Eftersom dessa appar inte primärt är tänkta för betatestning går det inte uttala sig om deras lämplighet i sådana situationer. Appar har i regel inte tillåtelse att ta bilder av andra appars vyer så en app för betatestning skulle inte fungera utan det krävs någon form utav SDK. Apparna utför en delmängd (skärminspelning) utav det som detta projekt syftar genomföra men vissa delar (röstinspelning och kamerainspelning) saknas.
+Eftersom dessa appar inte primärt är tänkta för betatestning går det inte uttala sig om deras lämplighet i sådana situationer. Appar har i regel inte tillåtelse att ta bilder av andra appars vyer så en app för betatestning skulle inte fungera utan det krävs någon form av SDK. Apparna utför en delmängd (skärminspelning) av det som detta projekt syftar genomföra men vissa delar (röstinspelning och kamerainspelning) saknas.
 
  Exempel på dessa appar är \emph{SCR Screen Recorder} \parencite{scr} och \emph{Screen Recorder} \parencite{sr}
 
 \subsection{Teknisk bakgrund}
-\label{sec:tekniskbakgrund}
+\label{subsec:tekniskbakgrond}
 Målet med projektet är att utveckla en SDK åt Androidapplikationer och ett krav från arbetsgivaren är att koden ska vara ``native'', vilket innebär att utvecklingen kommer ske främst i Java, i Androids SDK. 
 
 \subsubsection{Androidfragmentering}
@@ -48,10 +61,38 @@ Insamlade data ska presenteras som ett flöde av information som gestaltar testa
 
 Androids officiella API inkluderar en klocka med en upplösning på nanosekunder, \textit{System.nanoTime()} \parencite{adoc}. Klockan borde räcka gått och väl för att synkronisera kamera- och ljudupptagning med fingeravläsning och skärminspelning. Med samma klocka kan man trivialt spara tidsdata för varje skärmdump som tas, samt för varje fingerrörelse testaren gör. Man kan då representera testarens handlingar genom att ``måla över'' skärmdumparna med linjer som representarer fingerrörelser. Denna typ av enklare bildbehandlingsverktyg finns inbyggd i Android, i modulen \textit{Canvas} \parencite{adoc}. Dessa ihopslagna bilder kan sedan konverteras till en video med hjälp av den inbyggda modulen \textit{media.MediaCodec} \parencite{adoc}. Skulle det visa sig att \textit{media.MediaCodec} inte är kraftfull nog för våra ändamål finns även det fria alternativet \textit{ffmpeg} tillgängligt på Android \parencite{roman10}.
 
+\subsubsection{Ljudinspelning}
+\label{subsubsec:ljudinspelning}
+Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med klassen \textit{MediaRecorder}. Ljudformat och codecs som stöds är AAC LC, HE-AACv1, HE-AACv2, AAC ELD, AMR-NB, AMR-WB, FLAC, MP3, MIDI, Vorbis och PCM/WAVE \parencite{sound}.
+
+\subsubsection{Kamerainspelning}
+\label{subsubsec:kamerainspelning}
+Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen \texit{MediaRecorder} \parencite{frontcamera} som nämnts ovan. Frontkameran har ett id-nummer som man spelar in ifrån.
+
+\subsubsection{Ljudinspelning}
+\label{subsubsec:ljudinspelning}
+Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med klassen MediaRecorder. Ljudformat och codecs som stöds är AAC LC, HE-AACv1, HE-AACv2, AAC ELD, AMR-NB, AMR-WB, FLAC, MP3, MIDI, Vorbis och PCM/WAVE \parencite{sound}.
+
+\subsubsection{Kamerainspelning}
+\label{subsubsec:kamerainspelning}
+Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen MediaRecorder \parencite{frontcamera} som nämnts ovan. Frontkameran har ett idnummer som man spelar in ifrån.
+
+\subsubsection{Rörelseinspelning}
+Android har genom klassen \emph{view.MotionEvent}\parencite{motionevent} ett stort stöd för hantering av rörelser. Det är möjligt att få fram all information som kan tänkas vara intressant för detta projekt iochmed denna klass. Denna information måste behandlas så att den kan sparas undan på lämpligt sätt för att sedan läggas till ovanpå skärminspelningen.
+
 \subsubsection{Back- och front-end}
 \label{subsubsec:backfront}
 En back-end behövs för att ta emot datan som generas efter att en användare har betatestat en applikation och en front-end behövs för att presentera denna data för utvecklarna. Arbetsgivarna The Beta Family har redan en iOS-version av denna SDK med tillhörande back-end och front-end. Deras rekommendation är att det här projektet ska ha en egen miljö så att det inte uppstår ett beroende av deras kod, då data som generas i Android är annorlunda mot den som genereras i iOS. Dock bör samma ramverk som deras system är byggda på användas för att förenkla en senare integrering. Dessa ramverk är:
 
+\subsubsection{GUI}
+\label{subsubsec:gui}
+GUI för applikationen är mycket enkel och arbetsgivarnas önskan är att den ska vara så lik iOS-versionen som möjligt. Dubbeltryck med två fingrar drar ner en meny varifrån användaren kan välja att påbörja eller avsluta en inspelning, samt välja inställningar. Bland annat har användaren möjligheten att stänga av kamera- och ljudinspelning och trycksensorens färg kan väljas här. 
+
+Ett alternativ för att skapa menyn är att använda en \textit{dialog}, vilket är et popup-fönster som går att skräddarsy \parencite{dialog}. 
+
+Android har inte en inbyggd funktion för registrering av dubbeltryck med två fingrar, men klassen \textit{MotionEvent} samlar tillräckligt mycket information för att man ska kunna skriva en egen klass som kan avgöra om ett sådant dubbeltryck har skett \parencite{dbletap}.
+
+% TODO: Animation
 
 Back-end:
 \begin{itemize}
@@ -64,11 +105,3 @@ Front-end:
 	\item Ramverk: Zurb
 	\item Språk: HTML, CSS, JavaScript
 \end{itemize}
-
-\subsubsection{Ljudinspelning}
-\label{subsubsec:ljudinspelning}
-Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med klassen MediaRecorder. Ljudformat och codecs som stöds är AAC LC, HE-AACv1, HE-AACv2, AAC ELD, AMR-NB, AMR-WB, FLAC, MP3, MIDI, Vorbis och PCM/WAVE \parencite{sound}.
-
-\subsubsection{Kamerainspelning}
-\label{subsubsec:kamerainspelning}
-Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen MediaRecorder \parencite{frontcamera} som nämnts ovan. Frontkameran har ett idnummer som man spelar in ifrån.
