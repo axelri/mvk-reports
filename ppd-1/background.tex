@@ -41,11 +41,6 @@ Målet med projektet är att utveckla en SDK åt Androidapplikationer och ett kr
 \subsubsection{Androidfragmentering}
 Androidfragmentering syftar till det faktum att Androidplattformen körs i olika versioner på hundratals olika hårdvaruspecifikationer, och då måste skillnader i exempelvis skärmstorlek och tillgängliga bibliotek tas i hänsyn under utvecklingen. Ett av målen med projektet är just att ge applikationsutvecklarna möjligheten att fastställa att deras applikationer faktiskt fungerar som de är tänkta på de olika versionerna av plattformen. Under utvecklingsfasen för detta projekt kommer testning framförallt att utföras på emulatorer som bl.a. ingår i Androids SDK, eller som det finns separat programvara för, exempelvis Genymotion som har en gratis licens. I skrivandets stund (2014-02-15) är KitKat (version 4.4) den senaste Androidversionen, men 20\% av enheterna i cirkulation använder fortfarande Gingerbread (version 2.3.7).\parencite{androidversions} Endast 1,3\% använder en lägre version och Gingerbread är också den lägsta versionen som stöds av Genymotion. Allt detta har lett till beslutet att Gingerbread är den lägsta versionen som detta projekt kommer att stödja.
 
-
-\subsubsection{GUI}
-\label{subsubsec:GUI}
-SDK;n ska implementera en simpel GUI där användaren kan välja vad som skall spelas in. Denna panel ska efterlikna The Beta Family's IOs version och därmed glida ner från övre delen av skärmen när denna 'dubbeltappas'. Detta kan exempelvis göras genom att lägga till en animation på panelen vilket ger den visuella effekten som krävs.
-
 \subsubsection{Application Sandboxing}
 \label{subsubsec:sandbox}
 Androidarkitekturen implementerar ``application sandboxing'' vilket innebär att olika applikationer inte kan interagera med varandra direkt.\parencite{sandbox} Av denna anledning är det en SDK som behöver utvecklas som sedan kan integreras med applikationen som behöver testas. En fristående applikation skulle inte ha tillräckligt mycket behörighet för att spela in skärmen på den applikationen som ska testas. Denna sandboxing medför även att tredjepartens applikationer som tangentbord och Google Maps inte kan spelas in. 
@@ -69,20 +64,8 @@ Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med
 \label{subsubsec:kamerainspelning}
 Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen \texit{MediaRecorder} \parencite{frontcamera} som nämnts ovan. Frontkameran har ett id-nummer som man spelar in ifrån.
 
-\subsubsection{Ljudinspelning}
-\label{subsubsec:ljudinspelning}
-Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med klassen MediaRecorder. Ljudformat och codecs som stöds är AAC LC, HE-AACv1, HE-AACv2, AAC ELD, AMR-NB, AMR-WB, FLAC, MP3, MIDI, Vorbis och PCM/WAVE \parencite{sound}.
-
-\subsubsection{Kamerainspelning}
-\label{subsubsec:kamerainspelning}
-Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen MediaRecorder \parencite{frontcamera} som nämnts ovan. Frontkameran har ett idnummer som man spelar in ifrån.
-
 \subsubsection{Rörelseinspelning}
 Android har genom klassen \emph{view.MotionEvent}\parencite{motionevent} ett stort stöd för hantering av rörelser. Det är möjligt att få fram all information som kan tänkas vara intressant för detta projekt iochmed denna klass. Denna information måste behandlas så att den kan sparas undan på lämpligt sätt för att sedan läggas till ovanpå skärminspelningen.
-
-\subsubsection{Back- och front-end}
-\label{subsubsec:backfront}
-En back-end behövs för att ta emot datan som generas efter att en användare har betatestat en applikation och en front-end behövs för att presentera denna data för utvecklarna. Arbetsgivarna The Beta Family har redan en iOS-version av denna SDK med tillhörande back-end och front-end. Deras rekommendation är att det här projektet ska ha en egen miljö så att det inte uppstår ett beroende av deras kod, då data som generas i Android är annorlunda mot den som genereras i iOS. Dock bör samma ramverk som deras system är byggda på användas för att förenkla en senare integrering. Dessa ramverk är:
 
 \subsubsection{GUI}
 \label{subsubsec:gui}
@@ -93,6 +76,10 @@ Ett alternativ för att skapa menyn är att använda en \textit{dialog}, vilket 
 Android har inte en inbyggd funktion för registrering av dubbeltryck med två fingrar, men klassen \textit{MotionEvent} samlar tillräckligt mycket information för att man ska kunna skriva en egen klass som kan avgöra om ett sådant dubbeltryck har skett \parencite{dbletap}.
 
 % TODO: Animation
+
+\subsubsection{Back- och front-end}
+\label{subsubsec:backfront}
+En back-end behövs för att ta emot datan som generas efter att en användare har betatestat en applikation och en front-end behövs för att presentera denna data för utvecklarna. Arbetsgivarna The Beta Family har redan en iOS-version av denna SDK med tillhörande back-end och front-end. Deras rekommendation är att det här projektet ska ha en egen miljö så att det inte uppstår ett beroende av deras kod, då data som generas i Android är annorlunda mot den som genereras i iOS. Dock bör samma ramverk som deras system är byggda på användas för att förenkla en senare integrering. Dessa ramverk är:
 
 Back-end:
 \begin{itemize}
