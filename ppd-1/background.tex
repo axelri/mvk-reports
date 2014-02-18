@@ -1,5 +1,6 @@
 \section{Bakgrund}
 \subsection{Kommersiell bakgrund}
+\label{subsec:commercial}
 \subsubsection{The Beta Familys affärsidé}
 The Beta Family har som affärsidé att bistå med testare när ett företag önskar betatesta sin smartphoneapplikation. Företaget får då erbjuda en belöning till varje testare som The Beta Family tar en andel av. Det samfund The Beta Family byggt upp gör att de kan erbjuda en mer sömlös betatestning jämfört med konkurrenter. TestFairy är ett företag med liknande affärsidé men där krävs det att utvecklarna själva har tillgång till testare då TestFairy enbart bistår med betatestnngsmjukvara. Genom en SDK för skärminspelning kommer testarna kunna bidra med bättre återkoppling vilket leder till att The Beta Family kan leverera en bättre tjänst för företagen.
 
@@ -35,7 +36,7 @@ Eftersom dessa appar inte primärt är tänkta för betatestning går det inte u
  Exempel på dessa appar är \emph{SCR Screen Recorder} \parencite{scr} och \emph{Screen Recorder} \parencite{sr}
 
 \subsection{Teknisk bakgrund}
-\label{subsec:tekniskbakgrond}
+\label{subsec:tekniskbakgrund}
 Målet med projektet är att utveckla en SDK åt Androidapplikationer och ett krav från arbetsgivaren är att koden ska vara ``native'', vilket innebär att utvecklingen kommer ske främst i Java, i Androids SDK. 
 
 \subsubsection{Androidfragmentering}
@@ -65,6 +66,7 @@ Ramverket för multimedia stöder ljudinspelning med en rad olika ljudformat med
 Tanken med kamerainspelning är att spela in användarens uttryck när denne testar applikationen. Android tillåter applikationer att spela in via frontkameran genom klassen \textit{MediaRecorder} \parencite{frontcamera} som nämnts ovan. Frontkameran har ett id-nummer som man spelar in ifrån.
 
 \subsubsection{Rörelseinspelning}
+\label{subsubsec:movement}
 Android har genom klassen \emph{view.MotionEvent}\parencite{motionevent} ett stort stöd för hantering av rörelser. Det är möjligt att få fram all information som kan tänkas vara intressant för detta projekt iochmed denna klass. Denna information måste behandlas så att den kan sparas undan på lämpligt sätt för att sedan läggas till ovanpå skärminspelningen.
 
 \subsubsection{GUI}
