@@ -8,25 +8,23 @@ Detta gör att gruppen endast är förmögen att skriva en SDK som bara kan spar
 \subsubsection{Mjukvaran måste vara skriven i Java}
 Alla gruppens medlemmar har gått samma introduktionskurs i datalogi, vilken till stor del behandlar språket Java \parencite{inda}. Medlemmarnas erfarenheter i språket har redan tagits upp i \ref{subsec:skillz}. Språket Java används som en grundsten i Android-plattformen, och Androids officiella API är skrivet just i Java \parencite{adoc}. 
 
-Detta officiella API innehåller tillräcklig programkod för att spela in ljud och film, spara fingerrörelser över tid samt ta delvis täckande skärmdumpar, som beskrivits i \ref{sec:tekniskbakgrund}. Med bakgrund av gruppmedlemmarnas erfarenheter i Java, samt de möjligheter som Androids Java-API erbjuder, kan kravet klassas som genomförbart.
+Detta officiella API innehåller tillräcklig programkod för att spela in ljud och film, spara fingerrörelser över tid samt ta delvis täckande skärmdumpar, som beskrivits i \ref{subsec:tekniskbakgrund}. Med bakgrund av gruppmedlemmarnas erfarenheter i Java, samt de möjligheter som Androids Java-API erbjuder, kan kravet klassas som genomförbart.
 
 \subsubsection{SDK:n måste vara enkel att integrera}
 Helst av allt ska SDK:n leva upp till den nuvarande versionen för iOS, som ska gå att integrera på ca 2 minuter \parencite{superrec}. Enligt nuvarande implementationsplaner behöver bara SDK:n länkas till ett objekt från den applikation som ska testas, nämligen rot-vyn\footnote{Den mest täckande grafiska representationen av applikationen}. Att göra detta är i stort sett en trivialitet, så länge applikationsutvecklaren som vill testa sitt program kan ändra fritt i sin egen källkod. Kravet borde därför vara i högsta grad genomförbart.
 
 \subsubsection{Information som måste skickas med}
-Specifikt måste telefonmodell, skärmstorlek och skärmorientering skickas till arbetsgivarens server från SDK:n. Detta har behandlats i \ref{subsubsec:Metadata}. Även information om fingertryck och -gester ska skickas med. 
-% TODO: citera fintertryckdelen
+Specifikt måste telefonmodell, skärmstorlek och skärmorientering skickas till arbetsgivarens server från SDK:n. Detta har behandlats i \ref{subsubsec:Metadata}. Även information om fingertryck och -gester ska skickas med. Som nämns i \ref{subsubsec:movement} finns goda möjligheter för att få fram denna data genom Androids inbyggda bibliotek.
 
 \subsubsection{Informationen ska presenteras som ett tidsflöde}
-Som behandlats i \ref{subsubsec:Datapresentation} finns många bra verktyg för en sekventiell, högupplöst datarepresenation. Det finns dock en risk att skärminspelningens låga frekvens kan ha en negativ inverkan på informationsförmedlingen. Att skapa ett flöde av information från den insamlade datan verkar dock möjligt med befintliga kunskaper och verktyg.
-% TODO: citera risk
+Som behandlats i \ref{subsubsec:Datapresentation} finns många bra verktyg för en sekventiell, högupplöst datarepresenation. Det finns dock en risk att skärminspelningens låga frekvens kan ha en negativ inverkan på informationsförmedlingen. Se riskanalysen i \ref{subsec:screenrec}. Att skapa ett flöde av information från den insamlade datan verkar dock möjligt med befintliga kunskaper och verktyg.
 
 \subsubsection{En serverapplikation som behandlar och presenterar datan}
 Att skriva en serverapplikation i de språk och ramverk som nämns i \ref{subsubsec:backfront} är något som gruppens medlemmar överlag har låg erfarenhet av. Serverapplikationen kommer att innehålla en databas av typen relationsdatabas, något som alla gruppens medlemmar lär sig eller har lärt sig i kursen \textit{Databasteknik för D} \parencite{dbas}. Den här delen är heller ingen prioritet för projektet, utan är mest till för att ta emot och presentera de data som ansamlas i SDK:n. På grund av serverapplikationens låga vikt för projektet är det gruppmedlemmarnas åsikt att modulen i fråga är fullt möjlig att producera, medlemmarnas erfarenheter till trots.
 
 \subsection{Sidouppgifter}
 \subsubsection{SDK:n ska vara så lik iOS-versionen som möjligt}
-% TODO: citera GUI background
+Även om inga befintliga grafiska mallar i Android passar in för projektes behov finns möjligheter att skräddarsy sin egen grafiska profil. \ref{subsubsec:gui} behandlar gruppen kan gå till väga för att nå så nära det här målet som möjligt.
 
 \subsubsection{Tredjeparts-program ska kunna spelas in}
 Som behandlas i \ref{subsubsec:sandbox} verkar det vara en teknisk omöjlighet att spela in tredjepartsprogram med befintliga verktyg och krav från arbetsgivaren. Då detta är ett i dagsläget olöst problem, även i industrin bland erfarnare systemutvecklare, är det inte rimligt att vänta sig att gruppen ska kunna lösa detta.
