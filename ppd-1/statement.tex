@@ -1,23 +1,20 @@
 \section{Problembeskrivning}
 \subsection{Detaljerad problembeskrivning}
-Projektet framför oss består av att vi ska producera ett Software Development Kit (SDK) till vår projektgivare The Beta Family. Detta blir ett utvecklingsverktyg för applikationsutvecklare att direkt kunna få information från användaren om hur deras mobila applikation används och på så sätt få nödvändig information om hur de ska utveckla applikationer som är mer användarvänliga. Denna tjänst har redan fler än 9000 testare och har färdigställt tester för 2000 applikationer.
-
+Projektet framför oss består av att vi ska producera ett Software Development Kit (SDK) till vår projektgivare The Beta Family. Detta blir ett utvecklingsverktyg för applikationsutvecklare som får information från användaren om hur deras mobila applikation används. Detta för att kunna utveckla applikationer som är mer användarvänliga. Denna tjänst har redan fler än 9000 testare och har färdigställt tester för 2000 applikationer.
 
 Tjänsten vi ska utveckla fungerar så att utvecklaren lägger upp sin applikation till The Beta Family och väljer den målgrupp som applikationen riktar sig mot, vilket operativsystem som används samt hur mycket personen som testar applikationen ska få i ersättning för att utföra detta test. Efter att testet är genomfört och testaren har rapporterat eventuella buggar och fel, betygsätts testaren av utvecklaren som betalar för testet.
 
-
 Det erbjuds en SDK till iOS men inte till Android så projektet riktar sig till att utveckla en SDK för Android. Eftersom Androidmarknaden är mycket mer differentierad än vad den är på iOS-platformen så uppstår många fler utmaningar att lösa för att slutföra projektet. The Beta Family har även förbestämda krav och önskemål på hur projektet ska utvecklas och därför ger detta projektet en del ramar att hålla sig inom.
-
 
 Krav:
 
 \begin{itemize}
-	\item Android enheten ska ej behöva vara “rooted” vilket betyder att man inte ska behöva ha tillgång till alla processer i enheten utan det ska fungera med begränsad tillgänglighet som kan 	förekomma för normala Android användare.
+	\item Android enheten ska ej behöva vara “rootad” vilket betyder att man inte ska behöva ha tillgång till alla processer i enheten utan det ska fungera med begränsad tillgänglighet som kan förekomma för normala Android användare.
 	\item Projektets SDK ska vara byggd i Native Java.
-	\item iOS versionen är väldigt enkel och tar endast 2 minuter att applicera och därför bör Android verionen också vara enkel att applicera.
+	\item iOS versionen är väldigt enkel och tar endast 2 minuter att applicera och därför bör Android versionen också vara enkel att applicera.
 	\item Telefonens modell, skärmens storlek samt position skall skickas tillsammans till servern med information om knapptryck och fingerrörelser.
 	\item Användarens ansikte och röst skall spelas in och kan skickas in till servern som en separat video om det skulle vara nödvändigt.
-	\item På applikationens Front-end så skall vyerna användaren besöker sparas och presenteras på en tidslinje.
+	\item På applikationens front-end så skall vyerna användaren besöker sparas och presenteras på en tidslinje.
 \end{itemize}
 
 Önskemål:
@@ -32,11 +29,10 @@ Krav:
 
 Då detta är de grundläggande krav och önskemål till SDK:n så ska detta utvecklas till Android och inte iOS vilket ger en del begränsningar som vi i projektgruppen inte kan komma förbi pågrund av skillnaderna mellan dessa plattformar. Problem som bra bildfrekvens från kameran är problem som inte går att komma undan. Detta är sådant som vi i projektgruppen har diskuterat och kommit fram till att begränsningarna är något vi inte kan göra något åt och är helt enkelt något vi får arbeta runt och göra en så bra lösning som möjligt.
 
-
-När produkten är färdigställd så kommer den att bestå utav en “Front-end” som är det som kommer visas för användaren samt att ta in information från testaren samt utav “Back-end” som är den del som kommer att ta hand om och lagra all information som samlats in efter användning. “Front-end” skall byggas upp av HTML, CSS och JavaScript medan “Back-end” skall byggas upp i PHP med en databas i mySQL. \parencite{catalog}
+När produkten är färdigställd så kommer den att bestå utav en front-end som är det som kommer visas för användaren samt att ta in information från testaren samt utav back-end som är den del som kommer att ta hand om och lagra all information som samlats in efter användning. Front-end skall byggas upp av HTML, CSS och JavaScript medan back-end skall byggas upp i PHP med en databas i mySQL. \parencite{catalog}
 
 \subsection{Motivering}
-Alla gruppmedlemmar har ett stort intresse för teknisk utveckling och det är något vi alla vill arbeta med i framtiden. Det projekt vi valde reflekterar våra framtida ambitioner fast på en mildare nivå; att arbeta i grupp med att ta fram en teknisk lösning som skall levereras till ett företag (arbetsgivaren, The Beta Family i vårat fall) inom en given tidsram. Genom att prova på hur det är att jobba i grupp mot ett företag med ett projekt som faktiskt är tänkt att nå marknaden kommer vi att få erfarenheter som vi kommer kunna utnyttja i framtiden. Det är helt klart en fördel att känna till hur utvecklingsprocessen av en app går till när man som nyexaminerad civilingenjör når arbetslivet.
+Alla gruppmedlemmar har ett stort intresse för teknisk utveckling och det är något vi alla vill arbeta med i framtiden. Det projekt vi valde reflekterar våra framtida ambitioner fast på en mildare nivå; att arbeta i grupp med att ta fram en teknisk lösning som skall levereras till ett företag (arbetsgivaren, The Beta Family i vårat fall) inom en given tidsram. Genom att prova på hur det är att arbeta i grupp mot ett företag med ett projekt som faktiskt är tänkt att nå marknaden kommer vi att få erfarenheter som vi kommer kunna utnyttja i framtiden. Det är helt klart en fördel att känna till hur utvecklingsprocessen av en applikation går till när man som nyexaminerad civilingenjör når arbetslivet.
 
 \subsubsection{Tekniska områden}
 
@@ -48,7 +44,7 @@ Projektet innefattar olika tekniska områden som tillsammans med kursens mål ko
 		\item Front-end i form av ett intuitivt grafiskt användargränssnitt.
 		\item Hur denna programvara kan integreras i appar som ska testas.
 	\end{itemize}
-	\item Datahantering; hur den insamlade datan från telefonen ska sammanställas, skickas och tas emot av en webbserver för att sedan presenteras i ett webbgränssnitt.
+	\item Datahantering; hur insamlad data från telefonen ska sammanställas, skickas och tas emot av en webbserver för att sedan presenteras i ett webbgränssnitt.
 \end{itemize}
 
 \subsubsection{Framtiden inom teknisk utveckling}
