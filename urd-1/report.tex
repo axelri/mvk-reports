@@ -1,0 +1,90 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[inner=3cm,top=3cm,outer=3cm,bottom=3cm]{geometry}
+\usepackage[parfill]{parskip} % line skip between paragraphs instead of indents
+\usepackage{fancyhdr}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{color, colortbl}
+\usepackage{setspace} % dynamic line spacing
+\usepackage{float} % picture placing
+\usepackage{caption}
+\usepackage{verbatim} % insert files verbatim
+\usepackage{pdfpages} % import raw pdf
+\usepackage[toc,page]{appendix}
+\usepackage[labelformat=empty]{caption} % picture captions
+\ifxetex
+  % babel for xetex
+  \usepackage{fontspec}
+  \usepackage{polyglossia}
+  \setdefaultlanguage{swedish}
+	% i xetex behövs inga fulhack för åäö
+\else
+	% åäö-hax för icke-xelatex
+  \usepackage[swedish]{babel}
+	\usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+\fi
+\usepackage[style=authoryear,backend=biber]{biblatex} % harvard citing, modern backend
+\usepackage{csquotes} % language aware quoting
+\usepackage{hyperref} % automatic pdf bookmarks and hyperlinks, must be loaded last
+
+\bibliography{reference} % link to bibliography bib file
+
+% Header and footer
+\pagestyle{fancy}\headheight 13pt
+\fancyfoot{} % reset footer format
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% configuration
+\input{config.tex}
+\input{title.tex}
+
+% pdf metadata
+\hypersetup{pdfinfo={
+Title={URD-1},
+Author={The Meta Family}
+}}
+
+\begin{document}
+
+% title page
+\thispagestyle{empty}
+\titleGM
+\clearpage
+
+% empty/icon page
+\thispagestyle{empty}
+\includepdf{metafam.pdf}
+\clearpage 
+
+% abstract
+\thispagestyle{empty}
+\input{abstract.tex}
+\clearpage
+
+% table of contents
+% generated automatically
+% from \section commands
+\thispagestyle{empty}
+\tableofcontents % babel/polyglossia fixar språket
+\clearpage
+
+% document change record
+\setcounter{page}{1}
+\input{changes.tex}
+\clearpage
+
+\begin{flushleft} % left align
+\input{introduction.tex}
+\input{description.tex}
+\input{requirements.tex}
+
+\printbibliography[heading=bibintoc] % bibliography in table of contents
+
+\input{appendix.tex}
+\end{flushleft}
+\end{document}
