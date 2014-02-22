@@ -6,6 +6,32 @@
 
 \subsection{Begränsningar}
 
+\subsubsection{Rörelsehändelser}
+\label{touchevents}
+Android har ett bibliotek vid namn \emph{android.view.View.OnTouchListener}\parencite{touchlistener} som sköter all inmatning från fingrar. En begränsning skulle kunna ligga i den mängd händelser Android kan läsa. 
+
+Därför utvecklades en liten simpel applikation för att ta reda på vilken uppdateringsfrekvens som kan antas under projektutvecklingen. Det kan vara viktigt att veta då The Beta Family kan ha testare med äldre mobiler och skulle slutprodukten begränsas till någon enstaka bild per sekund kan det bli problematiskt att synkronisera rörelsehändelser med videon.
+
+Enhetens klocka sparas när man vidrör skärmen och för varje rörelsehändelse (\emph{TouchEvent}) som registreras ökas ett värde med ett och samtidigt jämförs den aktuella tiden med den sparade tiden. Genom att dividera antalet händelser med hur lång tid det gått kan ett värde fås fram. Detta värde kallas uppdateringsfrekvensen och blir alltså antalet händelser enheten registerar per sekund.
+
+Nedan hittas en tabell över ett antal mobiltelefoner, året de släpptes samt vilken uppdateringsfrekvens som uppmätts med denna applikation.
+\begin{table}[h!]
+	\begin{center}
+	\begin{tabular}{| c | c | c |}
+		\hline
+		Modell & Årtal & Uppdateringsfrekvens \\
+		\hline
+		Sony Xperia Z & 2013 & 60 \\
+		LG Optimus 2X & 2011 & 60 \\
+		HTC Desire HD & 2010 & 70 \\
+		\hline
+	\end{tabular}
+	\end{center}
+	\label{tab:uppdateringsfrekvens}
+	\caption{Uppdateringsfrekvens för skärmen hos vissa mobiltelefoner}
+\end{table}
+
+Det visar sig att uppdateringsfrekvensen inte blir några problem alls. HTC Desire HD är den äldsta mobil som testades och den har inga problem att klara 70 händelser per sekund. Denna uppdateringsfrekvens är med säkerhet tillräcklig för det projektet syftar åstadkomma.
 \subsection{Användarbeskrivning}
 
 \subsection{Antaganden och beroenden}
