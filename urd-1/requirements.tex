@@ -1,7 +1,18 @@
 \section{Specifika Krav}
 
-\subsection{Capability requirements (?)}
+\subsection{Funktionsmässiga krav}
 
-\subsection{Begränsningar}
-
-\subsection{Individuell kravspecifikation}
+\subsection{Tekniska krav och begränsningar}
+\subsubsection{Snabb implementation av SDK:n}
+\paragraph{Identifikator} 
+Snabb SDK-implementation.
+\paragraph{Beskrivning}
+Enligt The Beta Family kan deras SpeedRecorder för iOS implementeras på under två minuter av utvecklaren. Det är önskvärt att Androidversionen är lika simpel att implementera.
+\paragraph{Motivering}
+En del av The Beta Familys affärsidé är att utvecklarna själva implementerar deras ScreenRecorder. Detta ställer krav på utvecklaren att de kan implementera bibliotek och skriva några rader kod. Därför vill The Beta Family att implementationen är så simpel som möjligt. Krävs en mängd invecklade operationer och beslut kan detta skrämma bort eventuella kunder som då kanske väljer att inte betatesta applikationen.
+\paragraph{Prioritet}
+Att SDK:n är simpel att genomföra har ganska hög prioritet. Det viktigaste är självklart att den funktionsmässigt fungerar, är den krånglig att implementera kan den fortfarande användas av mer tekniska utvecklare. En SDK som är simpel 
+\paragraph{Källa}
+Uppstartsmöte med The Beta Family där VD:n Axel Nordenström gick igenom krav.
+\paragraph{Verifiering}
+När projektet är färdigställts kan en oberoende part låtas implementera SDK:n på tid. Lyckas personen implementera SDK:n på under två minuter kan detta krav ses som uppfyllt.
