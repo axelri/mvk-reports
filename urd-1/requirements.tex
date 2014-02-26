@@ -1,6 +1,21 @@
 \section{Specifika Krav}
 
 \subsection{Funktionsmässiga krav}
+\subsubsection{Användaren har själv kontroll över vad som spelas in}
+\paragraph{Identifikator} 
+Användarkontroll
+\paragraph{Beskrivning}
+När en person betatestar en app med hjälp utav The Beta Familys ScreenRecorder ska de kunna välja själv vad för information de vill ge utvecklarna. Testaren ska själv kunna bestämma om frontkameran och mikrofonen ska spela in under testet. 
+\paragraph{Motivering}
+Testaren bör kunna stänga av vissa funktioner då man inte alltid befinner sig i situationer då man är bekväm att t.ex. tala högljutt om vad som händer i appen. Det kan handla om att man gör ett test på tunnelbanan på vägen hem och bara vill visa hur man navigerar runt i applikationen.
+\paragraph{Behov}
+Detta kan ses som ett Standard-behov.
+\paragraph{Prioritet}
+Ett ``måste''-krav från The Beta Family är att testarens röst och frontkamera spelas in under testet, detta har hög prioritet. Att användaren själv kan stänga av vissa funktioner är önskvärt men inte prioriterat på samma höga nivå.
+\paragraph{Källa}
+Dokument med krav från The Beta Family
+\paragraph{Verifiering}
+En oberoende part får testa att genomföra ett test med olika funktioner avstängda. Lyckas personen utan problem stänga av önskade funktioner kan kravet anses uppfyllt och dessutom är det ett tecken på bra interaktionsdesign.
 
 \subsection{Tekniska krav och begränsningar}
 \subsubsection{Snabb implementation av SDK:n}
@@ -10,6 +25,8 @@ Snabb SDK-implementation.
 Enligt The Beta Family kan deras SpeedRecorder för iOS implementeras på under två minuter av utvecklaren. Det är önskvärt att Androidversionen är lika simpel att implementera.
 \paragraph{Motivering}
 En del av The Beta Familys affärsidé är att utvecklarna själva implementerar deras ScreenRecorder. Detta ställer krav på utvecklaren att de kan implementera bibliotek och skriva några rader kod. Därför vill The Beta Family att implementationen är så simpel som möjligt. Krävs en mängd invecklade operationer och beslut kan detta skrämma bort eventuella kunder som då kanske väljer att inte betatesta applikationen.
+\paragraph{Behov}
+Detta kan ses som ett Standard-behov.
 \paragraph{Prioritet}
 Att SDK:n är simpel att genomföra har ganska hög prioritet. Det viktigaste är självklart att den funktionsmässigt fungerar, är den krånglig att implementera kan den fortfarande användas av mer tekniska utvecklare. En SDK som är simpel 
 \paragraph{Källa}
