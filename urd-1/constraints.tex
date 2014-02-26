@@ -1,6 +1,6 @@
 \subsection{Begränsningar}
 
-\subsubsection{Rörelsehändelser}
+\subsubsection{Antalet rörelsehändelser}
 \label{touchevents}
 Android har ett bibliotek vid namn \emph{android.view.View.OnTouchListener}\parencite{touchlistener} som sköter all inmatning från fingrar. En begränsning skulle kunna ligga i den mängd händelser Android kan läsa. 
 
@@ -8,12 +8,12 @@ Därför utvecklades en liten simpel applikation för att ta reda på vilken upp
 
 Enhetens klocka sparas när man vidrör skärmen och för varje rörelsehändelse (\emph{TouchEvent}) som registreras ökas ett värde med ett och samtidigt jämförs den aktuella tiden med den sparade tiden. Genom att dividera antalet händelser med hur lång tid det gått kan ett värde fås fram. Detta värde kallas uppdateringsfrekvensen och blir alltså antalet händelser enheten registerar per sekund.
 
-Nedan hittas en tabell över ett antal mobiltelefoner, året de släpptes samt vilken uppdateringsfrekvens som uppmätts med denna applikation.
+I tabellen nedan hittas ett antal mobiltelefoner, året de släpptes samt vilken uppdateringsfrekvens som uppmätts med denna applikation.
 \begin{table}[h!]
 	\begin{center}
 	\begin{tabular}{| c | c | c |}
 		\hline
-		Modell & Årtal & Uppdateringsfrekvens \\
+		Modell & Årtal & Uppdateringsfrekvens (Hz) \\
 		\hline
 		Google Nexus 5 & 2013 & 60 \\
 		Sony Xperia Z & 2013 & 60 \\
@@ -24,8 +24,16 @@ Nedan hittas en tabell över ett antal mobiltelefoner, året de släpptes samt v
 		\hline
 	\end{tabular}
 	\end{center}
-	\label{tab:uppdateringsfrekvens}
 	\caption{Uppdateringsfrekvens för skärmen hos vissa mobiltelefoner}
+	\label{tab:freq}
 \end{table}
 
 Det visar sig att uppdateringsfrekvensen inte blir några problem alls. HTC Desire HD är den äldsta mobil som testades och den har inga problem att klara 70 händelser per sekund. Denna uppdateringsfrekvens är med säkerhet tillräcklig för det projektet syftar åstadkomma.
+
+\subsubsection{Rörelsehändelser som inte tillhör applikationen}
+\label{toucheventsoutofapi}
+Det finns en begränsning i vilka rörelsehändelser en applikation får läsa av. Vyer som tillhör andra applikationer och API går inte att hämta rörelsehändelser från. Det kan röra sig om Google Maps, tangentbordet, etc. Moduler av applikationen som inte är gjorda av utvecklaren kan alltså inte läsas från. Detta gör att den ScreenRecorder som ämnas implementeras kommer ha en begränsning i att använder sig applikationen av t.ex. Google Maps kommer inte resultatet (videon av testet) kunna visa hur användaren rörde sig inom denna del.
+
+För att testa detta utvecklades en mycket simpel exempelapplikation. Applikationen skrev ut nuvarande X- och Y-position för fingret i övre vänstra hörnet. Sedan lades en Google Maps-karta till över halva skärmytan. När fingret rörde sig utanför denna yta uppdaterades X- och Y-position ständigt men såfort fingret hamnade inom ramen för kartan slutades värdena att uppdateras.
+
+I presentationen skulle man kunna lägga in information om att testaren befinner sig i en vy som inte tillhör applikationen när detta inträffar. Till exempel genom en liten ruta med texten ``Användaren befinner sig just nu i Google Maps.''.
