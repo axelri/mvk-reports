@@ -1,6 +1,40 @@
 \section{Specifika Krav}
 
 \subsection{Funktionsmässiga krav}
+
+\subsubsection{Skärminspelning}
+\paragraph{Identifikator}
+Skärminspelning
+\paragraph{Beskrivning}
+Allt som användaren ser ska dokumenteras genom att ta så många bilder vi kan i sådan hög frekvens som möjligt.
+\paragraph{Motivering}
+Applikationsutvecklaren måste få möjlighet att se hur användaren navigerar i applikationen för att se hur användarvänligt gränssnittet är.
+\paragraph{Behov}
+Minimum
+\paragraph{Prioritet}
+Skärminspelningen har hög prioritet. Det är en av de viktigaste funktionerna för att få reda på hur användaren använder appen. En snabb prototyp behövs men skärminspelningsarbetet är tidsödande och behöver arbetas med konstant för att få ett så bra resultat som möjligt.
+\paragraph{Källa}
+Dokument med krav från The Beta Family.
+\paragraph{Verifiering}
+Kravet får verifieras genom att testa produkten på ett antal olika applikationer för att se att det fungerar att spela in skärmen oavsett vilken app som använder den.
+
+\subsubsection{Röstinspelning}
+\paragraph{Identifikator}
+Röstinspelning
+\paragraph{Beskrivning}
+Vad användaren säger under testningen av applikationen ska spelas in.
+\paragraph{Motivering}
+Att höra användarens tankegångar under testning utav användargränssnitt är högst önskvärt av apputvecklare.
+\paragraph{Behov}
+Minimum
+\paragraph{Prioritet}
+Hög prioritet
+\paragraph{Källa}
+Dokument med krav från The Beta Family.
+\paragraph{Verifiering}
+Kravet får verifieras genom att testa produkten på ett antal olika applikationer för att se att det fungerar att spela in ljud oavsett vilken app som använder den.
+
+
 \subsubsection{Användaren har själv kontroll över vad som spelas in}
 \paragraph{Identifikator} 
 Användarkontroll
@@ -9,9 +43,9 @@ När en person betatestar en app med hjälp utav The Beta Familys ScreenRecorder
 \paragraph{Motivering}
 Testaren bör kunna stänga av vissa funktioner då man inte alltid befinner sig i situationer då man är bekväm att t.ex. tala högljutt om vad som händer i appen. Det kan handla om att man gör ett test på tunnelbanan på vägen hem och bara vill visa hur man navigerar runt i applikationen.
 \paragraph{Behov}
-Detta kan ses som ett Standard-behov.
+Standard
 \paragraph{Prioritet}
-Ett ``måste''-krav från The Beta Family är att testarens röst och frontkamera spelas in under testet, detta har hög prioritet. Att användaren själv kan stänga av vissa funktioner är önskvärt men inte prioriterat på samma höga nivå.
+Att användaren själv kan stänga av vissa funktioner är önskvärt men inte av högsta prioritet.
 \paragraph{Källa}
 Dokument med krav från The Beta Family
 \paragraph{Verifiering}
@@ -26,10 +60,20 @@ Enligt The Beta Family kan deras SpeedRecorder för iOS implementeras på under 
 \paragraph{Motivering}
 En del av The Beta Familys affärsidé är att utvecklarna själva implementerar deras ScreenRecorder. Detta ställer krav på utvecklaren att de kan implementera bibliotek och skriva några rader kod. Därför vill The Beta Family att implementationen är så simpel som möjligt. Krävs en mängd invecklade operationer och beslut kan detta skrämma bort eventuella kunder som då kanske väljer att inte betatesta applikationen.
 \paragraph{Behov}
-Detta kan ses som ett Standard-behov.
+Standard
 \paragraph{Prioritet}
 Att SDK:n är simpel att genomföra har ganska hög prioritet. Det viktigaste är självklart att den funktionsmässigt fungerar, är den krånglig att implementera kan den fortfarande användas av mer tekniska utvecklare. En SDK som är simpel 
 \paragraph{Källa}
 Uppstartsmöte med The Beta Family där VD:n Axel Nordenström gick igenom krav.
 \paragraph{Verifiering}
 När projektet är färdigställts kan en oberoende part låtas implementera SDK:n på tid. Lyckas personen implementera SDK:n på under två minuter kan detta krav ses som uppfyllt.
+
+\subsubsection{TODO}
+\paragraph{Identifikator} 
+\paragraph{Beskrivning}
+\paragraph{Motivering}
+\paragraph{Behov}
+\paragraph{Prioritet}
+\paragraph{Källa}
+\paragraph{Verifiering}
+
