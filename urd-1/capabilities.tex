@@ -1,1 +1,23 @@
-\subsection{General Capabilities (?)}
+\subsection{Generella förmågor}
+\label{subsec:generalcapabilities}
+För att uppskatta och fastställa vad denna plattform bör kunna göra delas slutanvändarna in i två grupper: apputvecklare och betatestare. Dessa är två vitt skilda målgrupper med olika förutsättningar och mål, men båda är centrala för plattformens framgång. Plattformens förmågor bör därför utformas efter båda dessa gruppers behov. 
+
+\subsubsection{Applikationsutvecklarnas perspektiv}
+Arbetsgivarna till detta projekt fick idén om att utveckla en plattform för betatestning när de själva skulle lansera en mobilapplikation och insåg att det inte fanns en någon bra tillgång till riktigare användare som testar applikationen i sina egna miljöer. Detta är ett ännu allvarligare problem för Androidutvecklare jämfört med iOS-utvecklare på grund av den fragmentering som uppstått då Androids operativsystem körs på hundratals olika hårdvaruspecifikationer med olika skärmstorlekar och versioner på operativsystemet. För att lösa detta problem har vissa företag köpt in alla mobiltelefoner som deras användare har \parencite{buyAllPhones}, men detta är uppenbarligen inte en möjlighet som alla utvecklare har. En förmåga som plattformen bör ha är alltså att kunna {\bfseries nå ut till riktiga användare}. Detta har arbetsgivarna löst genom att skapa ett community på nätet med testare och utvecklare som i skrivandets stund har över 10 000 testare\parencite{betafamily}.
+
+När de riktiga användare väl har nåtts bör {\bfseries data om hur applikationen används} också kunna samlas in. Den tekniska informationen såsom kraschloggor, belastning av telefonens processorer och så vidare är av intresse för utvecklare, men den centrala förmågan som är högsta prioritet för detta projekt är videoinspelning av användningen, vilket inkluderar skärminspelning, inspelning av tryck på skärmen, samt inspelning av användarens reaktioner genom både videokameran och mikrofonen. 
+
+Ibland är det endast en viss funktion i applikationen som utvecklarna vill testa. Utvecklarna har därför möjligheten att på hemsidan specificera uppgifter som de vill att testarna ska utföra. 
+
+Testfunktionerna bör enkelt kunna integreras i den applikationen som ska testas. Arbetsgivarnas iOS-version importeras i delar till de olika utvecklingsmapparna som applikationen består av vilket beräknas ta ungefär två minuter, medan konkurrenten TestFairy erbjuder utvecklarna möjligheten att ladda upp deras färdigkompilerade kod på deras hemsida så bakas testfunktionerna in automatiskt. 
+
+Till sist bör all den insamlade informationen kunna presenteras på ett överskådligt sätt för utvecklarna, vilket görs på hemsidan där utvecklarna kan spela upp inspelningen av testerna samt följa de loggor som förts av exempelvis prestandan av enheten som applikationen körs på. 
+
+Allt detta är tänkt att ge applikationsutvecklarna mer information om vad som fungerar bra, samt mindre bra med deras applikation. 
+
+\subsubsection{Betatestarnas perspektiv}
+Betatestare har olika motivationer för att testa nya applikationer. Vissa gör det av välvilja för att hjälpa till i utvecklingsprocessen; vissa gör det för att få testa nya applikationer innan de når allmänheten; och vissa gör det av monetära syften. Allt detta löser arbetsgivarna genom deras community där nya applikationer som kan testas annonseras ut och utvecklarna har möjligheten att erbjuda testare monetär kompensation för varje utförd test. 
+
+När det kommer till själva testandet så bör den applikationen som ska testas vara i fokus och allt omkringliggande ta så lite plats som möjligt. Lösningen på detta i iOS-versionen som arbetsgivarna har utvecklat är att testaren med ett dubbeltryck med två fingrar får ner en meny där de kan starta och stoppa inspelningen. Denna meny är det enda som finns utöver själva applikationen som ska testas. Testarens integritet måste också respekteras och därför finns möjligheten att stänga av inspelning genom videokameran och mikrofon även i menyn. Androidversionen ska försöka emulera detta beteende i så stor grad som möjligt. 
+
+Installationen bör vara så smidig som möjligt vilket möjliggörs av att endast en installationsfil behöver laddas ner genom hemsidan. 
