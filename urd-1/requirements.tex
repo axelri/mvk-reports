@@ -133,6 +133,32 @@ Röstinspelning
   \\ \hline
 \end{tabular}
 
+\subsubsection{Testning ska kunna ske var som helst}
+\begin{tabular}{ | p{65pt} | p{300pt} |}
+  \hline
+  Identifikator & 
+  Platsoberoende tester
+  \\ \hline
+  Beskrivning & 
+  Ett test ska kunna genomföras var som helst. Det ska inte krävas att mobilen är kopplad till en dator eller att det finns internetuppkoppling.
+  \\ \hline
+  Motivering &
+  Genom att möjliggöra tester oberoende av plats och internetuppkoppling fås fler tester. En testare kan t.ex. genomföra ett test på tåget hem från jobbet. Utökar man mängden tillfällen ett test kan ske på ökar man också sannolikheten att testaren gör ett väl genomfört test då det sker på testarens villkor. Dessutom är detta ett viktigt krav för applikationer som beror på platsen. En applikation för Stockholms kommunaltrafik skulle inte kunna testas om det fanns krav på att mobilen var kopplad till datorn via sladd.
+  \\ \hline
+  Behov &
+Minimum
+  \\ \hline
+  Prioritet &
+Prioriteten är hög, detta är något som samtliga gruppmedlemmar måste ha i åtanke från första början av utvecklingen. Android tillåter en del extra funktioner om mobilen befinner sig i felsökningsläge och är kopplad till datorn via sladd. På grund av kravet på platsoberoende testning är det viktigt att utvecklarna redan från början tänker på att inte använda sig av dessa funktioner. Det kan vara svårt, om inte omöjligt, att anpassa sig efter kravet i efterhand.
+  \\ \hline
+  Källa &
+ Uppstartsmöte med The Beta Family där VD:n Axel Nordenström gick igenom krav.
+  \\ \hline
+  Verifiering &
+  Om ett test kan genomföras på en mobil med avstängd datatrafik, utan att vara kopplad till en dator, kan kravet anses vara uppfyllt.
+  \\ \hline
+\end{tabular}
+
 \begin{tabular}{ | p{65pt} | p{300pt} |}
   \hline
   Identifikator &
