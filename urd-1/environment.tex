@@ -1,8 +1,8 @@
 \subsection{Operativ miljö}
-Den bakomliggande servern och databasen tar emot data från testaren. Det som tas emot är inspelningen av användarens upplevelser samt diverse teknisk data. Denna data ska sedan presenteras via ett webbgränssnitt som apputvecklaren kommer åt. Webbgränssnittet skapas endast i mån av tid och ska i sådana fall integreras med The Beta Familys webbplats som just nu är under omarbetning. Webbplatsen ramverket Laravel (PHP och MySQL) samt ramverket Zurb (HTML, CSS och JavaScript).
+Den bakomliggande servern och databasen tar emot data från testaren. Det som tas emot är inspelningen av användarens upplevelser samt diverse teknisk data. Denna data ska sedan presenteras via ett webbgränssnitt som apputvecklaren (testbeställaren) kommer åt. Webbgränssnittet skapas endast i mån av tid och ska i sådana fall integreras med The Beta Familys webbplats som just nu är under omarbetning. Webbplatsen kommer att baseras på ramverket Laravel (PHP och MySQL) för back-end samt ramverket Zurb (HTML, CSS och JavaScript) för front-end.
 
 \subsubsection{Laravel och Zurb}
-För att hantera och presentera det dynamiska innehållet samt hantera all data används ramverken Laravel och Zurb. Med en korrekt implementation blir det mycket lätt för beställaren att integrera själva SDK-hanteringen i deras existerande system som rymmer annan funktionalitet. Gränssnittet för att presentera den insamlade (och behandlade) datan för testbeställaren skapas i Zurb.
+För att hantera och presentera det dynamiska innehållet samt hantera all data används ramverken Laravel och Zurb. Ramverken är modulära vilket betyder att en korrekt implementation blir mycket lätt för beställaren att integrera. Det blir med andra ord lätt att integrera själva SDK-hanteringen i deras existerande system som rymmer annan funktionalitet. Laravel har stöd för testning vilket, om används på rätt sätt, säkerställer att modulen som utvecklas fungerar tillsammans med den existerande webbplatsen. Gränssnittet för att presentera den insamlade (och behandlade) datan för testbeställaren skapas i Zurb och kommer att följa en stilmall i linje med webbsidan i övrigt.
 
 \subsubsection{Skapa video med FFmpeg}
 De skärmdumpar som tagits ska sättas ihop tillsammans med ljud och touch för att bilda en video. Detta sker på serversidan genom att först synkronisera och slå ihop de inspelade touch-händelserna med skärmdumparna. Detta görs i PHP med modulen MagickWand\parencite{magickwand}. Sedan används programmet FFmpeg\parencite{ffmpeg} för att sammanfoga de behandlade bitmaps-bilderna och ljudinspelningen för att skapa en video som sparas på servern. För att exekvera FFmpeg via PHP används kommandot \texttt{shell\_exec}\parencite{shellexec} som tar en kommandorad som argument. Exempel:
@@ -13,3 +13,4 @@ Kommandot \texttt{shell\_exec} kan exekvera kommandon parallellt medan resten av
 \begin{quote}
 \texttt{<?php shell\_exec(``ffmpeg \dots~\textbf{\&}''); ?>}
 \end{quote}
+För att över huvud taget kunna exekvera FFmpeg på servern behöves en servermijö som stödjer exekvering av godtycklig programvara, se \ref{subsubsec:serverside}.
