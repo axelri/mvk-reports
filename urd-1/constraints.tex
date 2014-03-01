@@ -40,6 +40,12 @@ För att testa detta utvecklades en mycket simpel exempelapplikation. Applikatio
 
 I presentationen skulle man kunna lägga in information om att testaren befinner sig i en vy som inte tillhör applikationen när detta inträffar. Till exempel genom en liten ruta med texten ``Användaren befinner sig just nu i Google Maps.''.
 
+\subsubsection{Skärminspelning utan root}
+\label{screenrecordingwithoutroot}
+Utan tillgång till root finns det inte någon smart fördefinerad metod för att spela in från skärmen. Informationen kring vad som visas på skärmen vid ett visst tillfälle går att få genom att veta vilken \textbf{Activity} användaren befinner sig i. Genom denna kan man få information om vilken \textbf{View} som är \textbf{rootview}. I klassen \textbf{View} finns sedan en metod \textbf{getDrawingCache} där informationen vi söker befinner sig. Problemet som uppkommer är att det inte finns något enkelt sätt att ta reda på vilken \textbf{Activity} vi befinner oss i. Den lösning som verkar bäst för detta är att skapa en egen basaktivitet som varje annan \textbf{Activity} ärver ifrån. Man kan sedan låta denna basaktivitet \textbf{Override}:a metoden onResume() och använda den för att spara undan den \textbf{Activity}:n som användaren befinner sig i.
+
+Genom denna lösning uppstår en begränsning gällande hur lätt det blir för apputvecklaren att implementera SDK:t då en applikation kan innehålla väldigt många aktiviteter. 
+
 \subsubsection{Skärminspelning}
 
 \subsubsection{Sammansättning av media}
