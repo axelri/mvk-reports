@@ -2,4 +2,11 @@
 Den bakomliggande servern och databasen tar emot data från testaren. Det som tas emot är inspelningen av användarens upplevelser samt diverse teknisk data. Denna data ska sedan presenteras via ett webbgränssnitt som apputvecklaren kommer åt. Webbgränssnittet skapas endast i mån av tid och ska i sådana fall integreras med The Beta Familys webbplats som just nu är under omarbetning. Webbplatsen ramverket Laravel (PHP och MySQL) samt ramverket Zurb (HTML, CSS och JavaScript).
 
 \subsubsection{Skapa video med FFmpeg}
-De skärmdumpar som tagits ska sättas ihop tillsammans med ljud och touch för att bilda en video. Detta sker på serversidan genom att först synkronisera och slå ihop de inspelade touch-händelserna med skärmdumparna. Detta görs i PHP med modulen MagickWand\parencite{magickwand}. Sedan används (kallas på via PHP) programmet FFmpeg\parencite{ffmpeg} för att sammanfoga de behandlade bitmaps-bilderna och ljudinspelningen för att skapa en video som sparas på servern.
+De skärmdumpar som tagits ska sättas ihop tillsammans med ljud och touch för att bilda en video. Detta sker på serversidan genom att först synkronisera och slå ihop de inspelade touch-händelserna med skärmdumparna. Detta görs i PHP med modulen MagickWand\parencite{magickwand}. Sedan används programmet FFmpeg\parencite{ffmpeg} för att sammanfoga de behandlade bitmaps-bilderna och ljudinspelningen för att skapa en video som sparas på servern. För att exekvera FFmpeg via PHP används kommandot \texttt{shell\_exec}\parencite{shellexec} som tar en kommandorad som argument. Exempel:
+\begin{quote}
+\texttt{<?php shell\_exec(``ffmpeg \dots''); ?>}
+\end{quote}
+Kommandot \texttt{shell\_exec} kan exekvera kommandon parallellt medan resten av PHP-koden körs vilket gör att servern kan utföra andra saker medan bitmaps-bilderna och ljudinspelningen behandlas. För att exekvera kommandon parallellt används flaggan \texttt{\&}. Exempel:
+\begin{quote}
+\texttt{<?php shell\_exec(``ffmpeg \dots~\textbf{\&}''); ?>}
+\end{quote}
