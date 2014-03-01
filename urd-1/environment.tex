@@ -9,8 +9,8 @@ De skärmdumpar som tagits ska sättas ihop tillsammans med ljud och touch för 
 \begin{quote}
 \texttt{<?php shell\_exec(``ffmpeg \dots''); ?>}
 \end{quote}
-Kommandot \texttt{shell\_exec} kan exekvera kommandon parallellt medan resten av PHP-koden körs vilket gör att servern kan utföra andra saker medan bitmaps-bilderna och ljudinspelningen behandlas. För att exekvera kommandon parallellt används flaggan \texttt{\&}. Exempel:
+Kommandot \texttt{shell\_exec} kan exekvera kommandon parallellt medan resten av PHP-koden körs vilket gör att servern kan utföra andra saker medan bitmaps-bilderna och ljudinspelningen behandlas. För att exekvera kommandon parallellt används flaggan ``\texttt{\&}'' (ungefär samma beteende som i terminalen i UNIX). Exempel:
 \begin{quote}
-\texttt{<?php shell\_exec(``ffmpeg \dots~\textbf{\&}''); ?>}
+\texttt{<?php shell\_exec(``ffmpeg \dots~\&''); ?>}
 \end{quote}
 För att över huvud taget kunna exekvera FFmpeg på servern behöves en servermijö som stödjer exekvering av godtycklig programvara, se \ref{subsubsec:serverside}.
