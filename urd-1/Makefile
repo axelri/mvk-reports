@@ -3,18 +3,15 @@ BIBTEX?=biber
 LATEXFLAGS+=-file-line-error
 FORCEFLAGS?=-halt-on-error
 
-.PHONY: default force distclean clean
+.PHONY: default distclean clean
 
 default: report.pdf
 
-report.pdf: *.tex catalog.pdf metafam.pdf
-	$(LATEX) $(LATEXFLAGS) report
-
-force: clean
+report.pdf: *.tex clean
 	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
 
 clean:
-	rm -f *.log *.out *.aux *.toc
+	rm -f *.log *.out *.aux *.toc *.bbl *.bcf *.blg *.xml
