@@ -8,7 +8,7 @@ FORCEFLAGS?=-halt-on-error
 default: report.pdf
 
 report.pdf: *.tex clean
-	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report
+	$(LATEX) $(FORCEFLAGS) report && $(BIBTEX) report && $(LATEX) $(FORCEFLAGS) report && $(LATEX) $(FORCEFLAGS) report
 
 distclean: clean
 	rm -f report.pdf
