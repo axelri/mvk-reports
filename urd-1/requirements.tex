@@ -240,29 +240,81 @@ Standard
   \\ \hline
 \end{tabular}
 
-\subsubsection{Android enheten ska ej vara rootad}
+\subsubsection{Androidenheten ska ej vara rootad}
 \begin{tabular}{ | p{65pt} | p{300pt} |}
   \hline
   Identifikator &
   Ska ej vara rootad
   \\ \hline
   Beskrivning & 
-  En Android enhet som använder sig av SDK:n ska inte behöva vara rootad för att tester ska vara möjliga att genomföra.
+  En Androidenhet som använder sig av SDK:t ska inte behöva vara rootad för att tester ska vara möjliga att genomföra.
   \\ \hline
   Motivering &
-  Om enheten måste vara rootad för att ha möjligheten att använda SDK:n så begränsas antalet kompatibla enheter drastiskt då de allra flesta android enheter inte är rootade. Detta innebär då även att antalet personer som kan testa applikationer minskar drastiskt. Allt för att förenkla erfarenheten av att använda SDK:n både för utvecklare och testare.
+  Om enheten måste vara rootad för att ha möjligheten att använda SDK:t begränsas antalet kompatibla enheter drastiskt då de flesta androidenheter inte är rootade. Detta innebär även att antalet personer som kan testa applikationer minskar avsevärt. Kravet finns för att förenkla användningen av SDK:t både för utvecklare och testare.
   \\ \hline
   Behov &
-  Maximum
+  Minimum
   \\ \hline
   Prioritet &
-  Prioriteten är hög då detta är en av de primära kraven för SDK:n.
+  Prioriteten är hög då detta är ett av de primära kraven för SDK:n.
   \\ \hline
   Källa &
   Dokument med krav från The Beta Family.
   \\ \hline
   Verifiering &
-  Kravet verifieras när projektet är färdigställt och kan testas på en android enhet som inte är rootad.
+  Kravet verifieras när projektet är färdigställt och kan testas på en androidenhet som inte är rootad.
+  \\ \hline
+\end{tabular}
+
+\subsubsection{Gränssnittet ska vara så likt iOS-versionen som möjligt}
+\begin{tabular}{ | p{65pt} | p{300pt} |}
+  \hline
+  Identifikator &
+  Utseende likt iOS-versionen
+  \\ \hline
+  Beskrivning & 
+  Den meny som användaren ska använda för att kontrollera ScreenRecorder:n ska vara så lik iOS-versionen som möjligt.
+  \\ \hline
+  Motivering &
+  Det är positivt för företaget om dess produkter påminner om varandra. Detta skapar en känsla av igenkänning hos erfarna användare som nyttjat produkter från företaget tidigare.
+  \\ \hline
+  Behov &
+  Deluxe
+  \\ \hline
+  Prioritet &
+  Prioriteten är hög. Eftersom gränssnittet är något av det första som ska vara klart bör detta has i åtanke från första början.
+  \\ \hline
+  Källa &
+  Dokument med krav från The Beta Family.
+  \\ \hline
+  Verifiering &
+  Kravet verifieras genom att en oberoende part får jämföra Androidversionen med iOS-versionen.
+  \\ \hline
+\end{tabular}
+
+\subsubsection{Stöd för att skicka sensordata i framtiden}
+\begin{tabular}{ | p{65pt} | p{300pt} |}
+  \hline
+  Identifikator &
+  Sensordata
+  \\ \hline
+  Beskrivning & 
+  The Beta Family vill ha möjligheten att utöka funktionaliteten så att det går att skicka med data som samlas av mobilens sensorer. Ett exempel på en sensor är rörelsesensorn som mäter acceleration och rotation.
+  \\ \hline
+  Motivering &
+  Ett stöd för sensordata gör mängden applikationer som kan testas större. Det finns t.ex. vissa spel som styrs genom att telefonen roteras.
+  \\ \hline
+  Behov &
+  Deluxe
+  \\ \hline
+  Prioritet &
+  Prioriteten är låg. Detta är något som projektgruppen måste ha i åtanke när SDK:t utvecklas men något som inte behöver göras tidigt.
+  \\ \hline
+  Källa &
+  Uppstartsmöte med The Beta Family där VD:n Axel Nordenström gick igenom krav.
+  \\ \hline
+  Verifiering &
+  Kravet verifieras om det lätt går att utöka den mängd information som skickas från mobilen till servern.
   \\ \hline
 \end{tabular}
 
