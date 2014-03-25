@@ -1,19 +1,28 @@
 \subsubsection{Typ}
+Servermodul som består av skriptfiler och kompilerad programkod.
 
 \subsubsection{Syfte}
+Syftet med skärmgestaltningen är att med hjälp av data från SuperRecorder gestalta testarens användarscenario i ett bildspel.
 
 \subsubsection{Funktionalitet}
+Data, i form av skärmdumpar från den testade Android-applikationen samt information om när dessa har tagits, skickas från komponenten \nameref{sub:dataprocessing}. Dessa data används sedan för att anropa ett externt bibliotek för videohantering, \textit{FFmpeg}.
 
 \subsubsection{Underordnade komponenter}
+Denna komponent har inga underordnade komponenter.
 
 \subsubsection{Beroenden}
+Beroenden för komponenten är data från den testade Android-applikationen, samt en servermiljö med \textit{FFmpeg} och tillhörande kodbibliotek.
 
 \subsubsection{Gränssnitt}
+Komponenten har ett enkelt gränssnitt mot det övriga systemet. Komponenten anropas med länkar till den efterfrågade datan, och matar då ut ett kompilerat bildspel av den testade Android-applikationens skärmanvändning.
 
 \subsubsection{Resurser}
+Modulen kräver en servermiljö med \textit{FFmpeg} och tillhörande kodbibliotek tillgängligt.
 
 \subsubsection{Referenser}
 
 \subsubsection{Process}
+Med hjälp av data från \nameref{sub:dataprocessing} och ett antal fördefinerade parametrar såsom önskad bildfrekvens skapar modulen en uppspelningsbar video. Detta gör den genom att för varje skärmdump skapa en viss sekvens video, på det sätt som finns beskrivet i den medskickade tidsinformationen. Om till exempel den färdiga videon ska ha en bildfrekvens på 25 bilder per sekund, och vi har givet att en viss skärmdump ska visas i 2 sekunder, skriver modulen 50 rutor till videon med den aktuella skärmdumpen. Modulen går sedan vidare till nästa skärmdump, tills den har förlängt videon med korrekt antal bildrutor för alla tagna skärmdumpar.
 
 \subsubsection{Data}
+Modulen använder sig alltid av två lokala datastrukturer; en videobuffer och en kö med indata. Kön med indata gås igenom element för element, och består av två subelement: en länk till datan (själva skärmdumpen) och information om hur länge just den datan ska visas i videon. För varje indata som gås igenom i kön skriver modulen motsvarande utdata till slutet av videobuffern. När hela kön har gåtts igenom skrivs videobuffern över till hårddisken och processen är slutförd.
