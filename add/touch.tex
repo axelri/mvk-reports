@@ -1,0 +1,29 @@
+\subsubsection{Typ}
+En metod som skriver rörelsehändelserna till en fil.
+\subsubsection{Syfte}
+På serversidan kommer olika delar kombineras för att generera en video som visar användarens test av applikationen. Rörelsehändelserna kommer representeras i form utav en text-fil med data. När videon sedan renderas kommer denna data användas för att rita ut rörelsehändelserna.
+\subsubsection{Funktionalitet}
+När en inspelning startar börjar mobilen spara varje rörelsehändelse. Denna information sparas till en fil enligt JSON-standard. Exempel på den information som sparas är: \\
+\begin{verbatim}
+{timestamp=''1000'', action=''up'', index=''0'', x=''310'', y=''670''}
+ \end{verbatim} 
+ \textbf{Timestamp} är tiden i millisekunder sedan inspelningen startade. Detta används för att kunna synka rörelsehändelserna med videon.
+ 
+ \textbf{Action} är vilken typ av rörelsehändelse det är. De tre vanligaste typerna är ``up'' när man släpper upp fingret, ``down'' när man placerar fingret på skärmen och ``move'' när man rör fingret över skärmen.
+ 
+ \textbf{Index} är vilket finger på skärmen som står för rörelsehändelsen. $Index=0$ är det fingret som först nuddade skärmen, $index=1$ är andra fingret som nuddade skärmen, o.s.v. Detta gör det möjligt att rita ut rörelser som kommer från flera olika fingrar utan att blanda ihop dem.
+ 
+ \textbf{X och Y} är den position fingret har i X- och Y-led.
+\subsubsection{Underordnade komponenter}
+
+\subsubsection{Beroenden}
+Rörelsehändelserna kan skrivas oberoende av andra komponenter. För använda informationen behövs dock en överföringsdel. Säkerheten i Android gör att inga utomstående applikationer eller användare har tillgång till filen som skrivits. 
+\subsubsection{Gränssnitt}
+
+\subsubsection{Resurser}
+
+\subsubsection{Referenser}
+
+\subsubsection{Process}
+
+\subsubsection{Data}
