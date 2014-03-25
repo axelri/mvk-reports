@@ -5,7 +5,7 @@ Servermodul som i huvudsak består av PHP-skript.
 Syftet med databehandlingsmodulen är att ta emot data från applikationstestaren i form av inspelade upplevelser av applikationen. Mottagen data innehåller, beroende på vad applikationstestaren spelat in; skärmdumpar, touch, ljud, inspelning från frontkameran samt diverse metadata om mobiltelefonen. Denna data sammanställs sedan där resultatet blir en film som sparas på servern samt data kring filmen och mobiltelefonen som sparas i en databas.
 
 \subsubsection{Funktionalitet}
-Data skickas från överföringsdelen via HTTP POST-protokollet till servern där ett PHP-skript väntar. Mottagen data behandlas sedan av ett annat PHP-skript som använder submoduler för att sätta ihop skärmdumpar, touch, ljud och kamerainspelning till en video. Submodulerna returnerar en videofilm som sparas på servern. Till sist lagras information om videofilmen samt metadata från mobiltelefonen i en MySQL-databas.
+Data skickas från överföringsdelen via \texttt{HTTP}-protokollet genom metoden \texttt{POST} till servern där ett PHP-skript väntar. Mottagen data behandlas sedan av ett annat PHP-skript som använder submoduler för att sätta ihop skärmdumpar, touch, ljud och kamerainspelning till en video. Submodulerna returnerar en videofilm som sparas på servern. Till sist lagras information om videofilmen samt metadata från mobiltelefonen i en MySQL-databas.
 
 \subsubsection{Underordnade komponenter}
 Underordnade komponenter är \nameref{sub:touchmedia} och \nameref{sub:screenmedia}.
@@ -14,7 +14,7 @@ Underordnade komponenter är \nameref{sub:touchmedia} och \nameref{sub:screenmed
 Denna modul kan komma att bero på PHP-ramverket Laravel. databehandlingen skapas i mån av tid som en insticksmodul till Laravel vilket skapar ett beroende till ramverkets kärnfiler som då måste finnas på servern.
 
 \subsubsection{Gränssnitt}
-Denna modul har inget användargränssnitt utan jobbar med protokollet HTTP POST mot överföringsdelen.
+Denna modul har inget användargränssnitt utan jobbar med \texttt{HTTP}-protokollet mot överföringsdelen.
 
 \subsubsection{Resurser}
 För att över huvud taget kunna använda denna modul krävs en servermiljö som kan exekvera PHP-skript och som har tillgång till en MySQL-databas. Dessutom krävs lagringsutrymme på servern för att kunna spara videofilmerna.
