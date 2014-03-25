@@ -1,0 +1,27 @@
+\subsubsection{Typ}
+Servermodul som i huvudsak består av PHP-skript.
+
+\subsubsection{Syfte}
+Syftet med databehandlingsmodulen är att ta emot data från applikationstestaren i form av inspelade upplevelser av applikationen. Mottagen data innehåller, beroende på vad applikationstestaren spelat in; skärmdumpar, touch, ljud, inspelning från frontkameran samt diverse metadata om mobiltelefonen. Denna data sammanställs sedan där resultatet blir en film som sparas på servern samt data kring filmen och mobiltelefonen som sparas i en databas.
+
+\subsubsection{Funktionalitet}
+Data skickas från överföringsdelen via HTTP POST-protokollet till servern där ett PHP-skript väntar. Mottagen data behandlas sedan av ett annat PHP-skript som använder extern programvara för att sätta ihop skärmdumpar, touch, ljud och kamerainspelning till en video. Den externa programvaran returnerar en videofilm som sparas på servern. Till sist lagras information om videofilmen samt metadata från mobiltelefonen i en MySQL-databas.
+
+\subsubsection{Underordnade komponenter}
+Denna komponent har inga underordnade komponenter.
+
+\subsubsection{Beroenden}
+Denna modul kan komma att bero på PHP-ramverket Laravel. databehandlingen skapas i mån av tid som en insticksmodul till Laravel vilket skapar ett beroende till ramverkets kärnfiler som då måste finnas på servern.
+
+\subsubsection{Gränssnitt}
+Denna modul har inget användargränssnitt utan jobbar med protokollet HTTP POST mot överföringsdelen.
+
+\subsubsection{Resurser}
+För att över huvud taget kunna använda denna modul krävs en servermiljö som kan exekvera PHP-skript och som har tillgång till en MySQL-databas. Dessutom krävs lagringsutrymme på servern för att kunna spara videofilmerna.
+
+\subsubsection{Referenser}
+Sektion 2.3.5 i URD-1 ger en motivering till varför sammansättning av media sker på serversidan istället för i mobiltelefonen. Sektion 2.6 i URD-1 handlar om servermiljön och under 2.6.2 ges en kort förklaring programmet FFmpeg som kommer att användas vid databehandlingen.
+
+\subsubsection{Process}
+
+\subsubsection{Data}
