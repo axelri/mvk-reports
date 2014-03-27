@@ -1,0 +1,34 @@
+\subsubsection{Typ}
+Java klass och xml-dokument
+
+\subsubsection{Syfte}
+URD-krav 4
+URD-krav 6
+Visualiserar navigationsmöjligheter i GUI;t och tillhandahåller för användaren möjlighet att välja vad som ska spelas in under en testsession. 
+
+\subsubsection{Funktionalitet}
+Settingsmenyn består av knappar, checkboxes och en färgväljare som skickar information om att de tryckts till GUI vilket sedan utför de händelser varje inputenhet ska utlösa.
+
+\subsubsection{Underordnade Komponenter}
+Colorslider.
+
+\subsubsection{Beroenden}
+GUI;t måste visas för att denna komponent ska vara relevant.
+
+\subsubsection{Gränssnitt}
+Vid tryckning på given inputenhet skickas information om att den specifika inputenheten blivit tryckt till GUI.
+
+\subsubsection{Resurser}
+Settingsmenyn behöver GUI för att fungera.
+
+\subsubsection{Referenser}
+Settingsmenyn är implementerad i Android och därav behövs kunskap om Android för att förstå komponenten.
+http://developer.android.com/reference/packages.html
+
+\subsubsection{Processer}
+För varje inputenhet tillskrivs följande listener:
+If tryckt
+then gui.inputenhetused(denna_inputenhet)
+
+\subsubsection{Data}
+Settingsmenyn lagrar ingen intern data förutom det som följer genom användandet av Androids biblotek.
