@@ -1,0 +1,33 @@
+\subsubsection{Typ}
+Java klass och xml-dokument
+
+\subsubsection{Syfte}
+URD-krav 6
+Tillhandahåller för användaren möjlighet att göra val kring en redan inspelad testsession.
+
+\subsubsection{Funktionalitet}
+Menyn består av en knapp som betyder att videon ska spelas upp, en för att ta bort videon samt en för att ladda upp. Uppladdningsknappen kan endast tryckas på ifall användaren är inloggad och att videon inte redan är uppladdad. Slutligen finns det en knapp för navigation tillbaka till videolistan.
+
+\subsubsection{Underordnade Komponeter}
+Subkomponenter saknas.
+
+\subsubsection{Beroenden}
+Det måste existera en inspelad testsession samt att denna inspelning måste vara utpekad som den inspelning som ska visas i denna meny. Dessutom måste GUI;t visas för att denna komponent ska vara relevant.
+
+\subsubsection{Gränssnitt}
+Vid knapptryckning skickas information om att den specifika knappen blivit tryckt till GUI.
+
+\subsubsection{Resurser}
+Videomenyn behöver GUI för att fungera.
+
+\subsubsection{Referenser}
+Videomeyn är implementerad i Android och därav behövs kunskap om Android för att förstå komponenten.
+http://developer.android.com/reference/packages.html
+
+\subsubsection{Processer}
+För varje knapp tillskrivs följande listener:
+If tryckt
+then gui.knapptryckt(denna_knapp)
+
+\subsubsection{Data}
+Videomenyn lagrar ingen intern data förutom det som följer genom användandet av Androids biblotek.

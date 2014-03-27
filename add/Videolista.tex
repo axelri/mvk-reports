@@ -1,0 +1,33 @@
+\subsubsection{Typ}
+Java klass och xml-dokument
+
+\subsubsection{Syfte}
+URD-krav 6
+Visualiserar vilka inspelningar som finns lagrade i SuperRecorder.
+
+\subsubsection{Funktionalitet}
+Videolistan består av en scrollbar lista som visualiserar mängden av alla inspelningar som finns lagrade i Super Recorder. Det finns dessutom en knapp som ska motsvara att backa till huvudmenyn. Vid tryckning på ett element i listan skall detta begära en meny där detta objekt kan behandlas.
+
+\subsubsection{Underordnade Komponenter}
+Subkomponenter saknas.
+
+\subsubsection{Beroenden}
+GUI;t måste visas för att denna komponent ska vara relevant. Dessutom måste en pekare till den plats i minnet där videorna för testsessionerna finnas tillgänglig.
+
+\subsubsection{Gränssnitt}
+Vid tryckning på given inputenhet skickas information om att den specifika inputenheten tryckts till GUI;t. Ifall ett element i listan trycks så skickas informationen att det specifika elementet har trycks.
+
+\subsubsection{Resurser}
+Videolistan behöver GUI för att fungera.
+
+\subsubsection{Referenser}
+Videolistan är implementerad i Android och därav behövs kunskap om Android för att förstå komponenten.
+http://developer.android.com/reference/packages.html
+
+\subsubsection{Processer}
+För varje inputenhet tillskrivs följande listener:
+If tryckt
+then gui.inputenhetused(denna_inputenhet)
+
+\subsubsection{Data}
+Videolistan lagrar ett Adapter-objekt som kan upptäcka om förändringar har skett i listan som lagrar inspelade testsessioner. Förutom det lagras ingen intern data förutom det som följer genom användandet av Androids biblotek.

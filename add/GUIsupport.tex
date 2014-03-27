@@ -1,0 +1,29 @@
+\subsubsection{Typ}
+Java klass
+
+\subsubsection{Syfte}
+GUI Support är mellanhanden mellan GUI;t och alla andra komponenter i SDK;t som har direkt koppling med eventuella begäran från GUI;t. Detta innebär att de val kring inställningar som görs i GUI;t  samt alla inspelade testsessioner lagras i GUI Support.
+
+\subsubsection{Funktionalitet}
+GUI Support är en mellanhand som därav består av metoder för att hämta specifika data som exempelvis pekaren till listan av inspelade testsessioner eller för att ändra värden som specificerar inställningar för inspelningar. Den består även av metoder för att anropa rätt komponenter i SDK;t för att utföra önskade operationer vilket exempelvis kan vara att spela in en ny video.
+
+\subsubsection{Underordnade komponenter}
+Subkomponenter saknas.
+
+\subsubsection{Beroenden}
+För att GUI Support ska fungera måste det finnas en androidapplikation som har implementerat SDK;t.
+
+\subsubsection{Gränssnitt}
+GUI;t använder GUI Support för att hämta och förändra önskad data som sedan skickas vidare till andra komponenter som sköter inspelning.
+
+\subsubsection{Resurser}
+GUI Support behöver GUI för att fungera samt komponenter som kan sköta inspelning.
+
+\subsubsection{Referenser}
+Inga externa dokument är nödvändiga.
+
+\subsubsection{Processer}
+GUI Support består av getters och setter som anropas av GUI;t samt metoder som anropar metoder i andra externa komponenter.
+
+\subsubsection{Data}
+GUI Support lagrar en lista över alla inspelade testsessioner, en snapshot av vart i navigeringen GUI;t är, samt alla de värden som användaren kan ändra gällande inspelning.

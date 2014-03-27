@@ -1,0 +1,33 @@
+\subsubsection{Typ}
+Java klass och xml-dokument
+
+\subsubsection{Syfte}
+URD-krav 6
+Visualiserar navigationsmöjligheter i GUI;t och tillhandahåller för användaren möjlighet att välja att spela in en testsession. 
+
+\subsubsection{Funktionalitet}
+Huvudmenyn består av knappar som skickar information om att de tryckts till GUI vilket sedan utför de händelser varje knapp  ska utlösa.
+
+\subsubsection{Underordnade Komponenter}
+Subkomponenter saknas.
+
+\subsubsection{Beroenden}
+GUI;t måste visas för att denna komponent ska vara relevant.
+
+\subsubsection{Gränssnitt}
+Vid knapptryckning skickas information om att den specifika knappen blivit tryckt till GUI.
+
+\subsubsection{Resurser}
+Huvudmenyn behöver GUI för att fungera.
+
+\subsubsection{Referenser}
+Huvudmenyn är implementerad i Android och därav behövs kunskap om Android för att förstå komponenten.
+http://developer.android.com/reference/packages.html
+
+\subsubsection{Prcocesser}
+För varje knapp tillskrivs följande listener:
+If tryckt
+then gui.knapptryckt(dennaknapp)
+
+\subsubsection{Data}
+Huvudmenyn lagrar ingen intern data förutom det som följer genom användandet av Androids biblotek.

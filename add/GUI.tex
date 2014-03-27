@@ -1,0 +1,38 @@
+\subsubsection{Typ}
+Samling av javaklasser och xml-dokument.
+\subsubsection{Syfte}
+URD-krav 4
+URD-krav 6
+GUI;t ansvarar för att möjliggöra visuell och fysisk interaktion mellan användaren och Super Recorder. 
+
+\subsubsection{Funktionalitet}
+GUI;t består av en mängd olika menyer som skickar information till GUI;t om att deras respektive knappar och liknande blivit tryckta. GUI;t är därav en komponent som endast tilldelar listeners för alla komponenter.
+
+\subsubsection{Underordnade komponenter}
+GUI Support, Huvudmeny, Settingsmeny, Inloggningsmeny, Videolista, Colorslider, Videomeny
+
+\subsubsection{Beroenden}
+För att GUI;t ska kunna användas behövs det en androidapplikation som implementerar funktionalitet för att kunna visa detta GUI. Androidapplikationen är i detta avseende den applikation som nyttjar detta projekts SDK för att kunna spela in användartestsessioner. GUI;t behöver även delar som ansvarar för att lagra inspelade testsessioner och diverse inställningar då dessa data inte lagras direkt i GUI;t.
+
+\subsubsection{Gränssnitt}
+GUI;t har ingen direkt kontakt med applikationen som har implementerat SDK;t. Applikationen begär att GUI;t ska visas, GUI;t kommer därefter att vara fortsatt aktivt fram till dess att GUI;t självt ger order om att tas bort. De externa komponenter GUI;t kommunicerar med är exklusivt den enda klass som är avsedd att lagra olika inställningsval samt skicka vidare olika begäran om att exempelvis starta en inspelning. Denna kommunikation är helt enkelriktad från GUI;t, inga anrop görs till GUI;t från externa komponenter. 
+
+\subsubsection{Resurser}
+Utöver det direkta beroende till Android är GUI;t i behov av en komponent som lagrar data GUI;t producerar samt skickar vidare eventuella begäran till rätt delar av programmet. GUI;t behöver även en androidapplikation för att kunna fungera.
+
+\subsubsection{Referenser}
+GUI;t är implementerat i Android och därav behövs kunskap om Android för att förstå komponenten.
+http://developer.android.com/reference/packages.html
+
+\subsubsection{Process}
+GUI;t bistår med kontakt mellan alla subkomponenterna och ser till att dessa visas och placeras korrekt baserat på den önskade designen. Detta sker genom att lägga till listeners på alla subkomponenter, vilka behandlar alla interna händelser i subkomponter som är relevanta för andra komponenter i GUI;t  så att dessa händelser ger den effekt på GUI;t i sin helhet som de ska. I pseudukod kan det se ut som följande;
+Void knapptryckt(knapp)
+[…]
+If knapp = knapp1
+Then utför det som ska hända för knapp 1
+If knapp = knapp2
+Then utför det som ska hända för knapp 2
+[…]
+
+\subsubsection{Data}
+GUI;t lagrar ingen intern data förutom det som följer genom användandet av Androids biblotek.
