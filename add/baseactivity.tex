@@ -1,0 +1,20 @@
+\subsubsection{Typ}
+Java-klass
+\subsubsection{Syfte}
+Syftet med denna klass är att vara en mellanhand mellan applikationernas aktiviteter och klassen Activity. Detta behövs för att ta reda på vilken Activity som användaren befinner sig i under körning.
+\subsubsection{Funktionalitet}
+Klassen är menad att användas som superklass i varje aktivitet. När en aktivitet startas kallas basaktivitetens funktion onResume() som sparar undan en referens till aktiviteten. När en aktivitet avslutas kallas basaktvitetens funktion onDestroy() som i sin tur sätter referensen till null. Sistnämnda är mycket viktigt för att undvika massiva minnesläckor.
+\subsubsection{Underordnade komponenter}
+Alla aktiviteter till applikationen är underordnade komponenter. Rörelse- och skärminspelning beror på den sparade referensen.
+\subsubsection{Beroenden}
+Inga beroenden
+\subsubsection{Gränssnitt}
+
+\subsubsection{Resurser}
+Klassen implementerar Activity från Android SDK.
+\subsubsection{Referenser}
+
+\subsubsection{Process}
+
+\subsubsection{Data}
+ 
