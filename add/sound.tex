@@ -2,20 +2,24 @@
 En modul som sköter ljudinspelning och sparar den som given ljudfil.
 
 \subsubsection{Syfte}
-Ändamålet för ljudinspelningsmodulen är att kunna spela in användarens röst under testning med SuperRecorder. Att höra användarens tankegångar under testning av användargränssnitt är högst önskvärt av apputvecklare. Komponenten ämnar uppfyllakravet "Röstinspelning" (Se 3.1.2, URD-1).
+Ändamålet för ljudinspelningsmodulen är att kunna spela in användarens röst under testning med SuperRecorder. Att höra användarens tankegångar under testning av användargränssnitt är högst önskvärt av apputvecklare. Komponenten ämnar uppfyllakravet Röstinspelning (Se 3.1.2, URD-1).
 
 \subsubsection{Funktionalitet}
 Ljudinspelningsmodulen har två publika metoder; void recordAudio och void stopRecording. RecordAudio kommer att kallas vid påbörjad inspelning med SuperRecorder och komma att köra tills dess att inspelningen avslutas av användaren genom StopRecording. När den senare kallas kommer ljudfilen skickas till given plats.
 
 \subsubsection{Underordnade komponenter}
+Denna komponent har inga underordnade komponenter.
 
 \subsubsection{Beroenden}
 Ljudinspelningen kommmer inte bero av någon annan komponent i projektet.
+
 \subsubsection{Gränssnitt}
 
 \subsubsection{Resurser}
+Ett krav är att det tillräckligt mycket minne för ljudfilen som genereras. Denna kommer dock inte vara stor.
 
 \subsubsection{Referenser}
+Under 3.1.2 finns en lista över funktionsmässiga krav för röstinspelningen i SuperRecorder.
 
 \subsubsection{Process}
 
