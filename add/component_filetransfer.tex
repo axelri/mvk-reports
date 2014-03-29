@@ -1,0 +1,51 @@
+\subsubsection{Typ}
+Java-klass
+
+\subsubsection{Syfte}
+Att kunna överföra filer från applikationen på de mobila enheterna till en server. Detta relaterar till punkt 2.3.5 om mediasammansättning i URD:n, då sammansättningen sker på serversidan, samt punkt 2.3.6 om överföring. 
+
+\subsubsection{Funktionalitet}
+Klassen implementerar en metod som antingen tar en sträng som är sökvägen till filen som ska skickas, eller en lista med strängar till flera filer som ska skickas. Metoden öppnar sedan en anslutning till servern, skickar filerna med HTTP-protokollet med metoden POST och stänger sedan anslutningen till servern. 
+
+\subsubsection{Underordnade komponenter}
+Inga underordnade komponenter
+
+\subsubsection{Beroenden}
+För att denna klass ska kunna användas krävs att data från en inspelning av betatestning har genererats och sparats till filer. Att filerna är komprimerade och arkiverade enligt en förutbestämd fil- och mappstruktur är att föredra så att serversidan vet hur filerna ska extraheras och tolkas. Att en server finns som kan ta emot filer är såklart också ett krav. 
+
+\subsubsection{Gränssnitt}
+Efter en att en användare har slutfört sin betatesinspelning så genereras data om hur applikationen har använts. Datan sparas i filer som sedan komprimeras och arkiveras till en zip-fil. Denna fil måste sedan överföras till servern där de separata filerna som bl.a. innehåller skärmdumparna, användarens fingerrörelser, video- och ljudinspelning etc. sammanställs. 
+
+\subsubsection{Resurser}
+Ett lagringssystem på framförallt serversidan krävs för att kunna spara all information som genereras av betatestarna. 
+
+\subsubsection{Referenser}
+En anslutning mellan applikation och servern skapas genom TCP/IP-protokollen. Mer information om detta finns på \url{http://en.wikipedia.org/wiki/Transmission_Control_Protocol}.
+
+När en anslutning väl har etablerat används HTTP-protokollet, närmare bestämt en HTTP request med metoden POST för att skicka över en fil. Mer om HTTP-protokollet finns att läsa på \url{http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol}. 
+
+Den specifika implementation av dessa protokoll görs genom de inbyggda biblioteken i Java med klassen \verb:HttpUrlConnection:. \url{http://developer.android.com/reference/java/net/HttpURLConnection.html}. 
+
+\subsubsection{Process}
+Pseudokod: 
+\begin{verbatim}
+Class FileSender
+	function send(String file){
+		Open connection to server
+		Read in file
+		Send file
+		Close connection to server
+	}
+	
+	function send(String[] files){
+		Open connection to server
+		for each file in files {
+			Read in file
+			Send file		
+		}
+		Close connection to server
+	}
+\end{verbatim}
+
+\subsubsection{Data}
+\verb:HttpURLConnection connection: innehåller anslutningen till servern, från denna kan vi få objektet \verb:DataOutputStream outputStream: genom vilken vi skickar över filen. Filen läses in till programmet genom \verb:FileInputStream fileInputStream:. 
