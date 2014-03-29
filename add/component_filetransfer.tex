@@ -29,7 +29,7 @@ Den specifika implementation av dessa protokoll görs genom de inbyggda bibliote
 \subsubsection{Process}
 Pseudokod: 
 \begin{verbatim}
-Class FileSender
+Class FileTransfer
 	function send(String file){
 		Open connection to server
 		Read in file
@@ -48,4 +48,4 @@ Class FileSender
 \end{verbatim}
 
 \subsubsection{Data}
-\verb:HttpURLConnection connection: innehåller anslutningen till servern, från denna kan vi få objektet \verb:DataOutputStream outputStream: genom vilken vi skickar över filen. Filen läses in till programmet genom \verb:FileInputStream fileInputStream:. 
+Klassen använder sig av två lokala dataströmmar: en som läser in zip-filen och en som skickar den inlästa datan till servern. Strömmen som läser in zip-filen fås genom: \verb:FileInputStream fileInputStream = new FileInputStream(new File(pathToOurFile) );: och strömmen som skickar över datan fås genom Java-objektet \verb:HttpURLConnection connection: som sköter anslutningen till servern: \verb:DataOutputStream outputStream = new DataOutputStream( connection.getOutputStream() );:. 

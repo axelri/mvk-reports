@@ -1,0 +1,52 @@
+\subsubsection{Typ}
+En Java-klass som tar en eller flera filer och komprimerar samt arkiverar dem till en enda zip-fil. 
+
+\subsubsection{Syfte}
+När en betatestinspelning är slutförd genereras en mängd data som måste överföras till en server där den sammanställs för att sedan kunna presenteras för applikationsutvecklarna. Det är mer praktiskt att få all denna information i ett enda paket än att få alla filer skickade var för sig. Ju mindre filstorleken är desto mindre tid tar överföringen och mindre bandbredd används. Allt detta leder till att komprimering av data till en enda zip-fil utförs innan överföringen till servern sker. Detta relaterar till punkt 2.3.5 (sammansättning av media på serversidan) samt 2.3.6 (överföring) i URD:n. 
+
+\subsubsection{Funktionalitet}
+Klassen implementerar en publik metod \verb:zip(): som tar två parametrar: en lista av sökvägar till filerna som ska komprimeras samt en sökväg till den komprimerade filen. Metoden går då igenom listan av filer som ska komprimeras, komprimerar dem och lägger till dem i en zip-fil. 
+
+\subsubsection{Underordnade komponenter}
+Inga underordnade komponenter
+
+\subsubsection{Beroenden}
+För att att klassen ska kunna komprimera filer krävs att filerna existerar samt att sökvägarna till filerna stämmer. 
+
+\subsubsection{Gränssnitt}
+Efter en slutförd inspelning av betatestning av en applikation genereras en mängd data som skrivs till filer. Dessa filer består av bland annat alla skärmdumpar som sedan ska sammanställas till en video, information om var användaren har tryckt på skärmen, videoinspelning av användarens ansikte, ljudinspelning av användaren med mera. Innan all data skickas till servern används denna klass för att komprimera filerna till en enda fil, som sedan skickas till servern. 
+
+\subsubsection{Resurser}
+Lagringsutrymme krävs för den genererade zip-filen. 
+
+\subsubsection{Referenser}
+Att lagra datan i flertalet filer i enda enda, mindre fil kräver två steg: komprimering och arkivering. Komprimering leder till att en fil ockuperar mindre minnesutrymme (i detta fall på ett ickedestruktivt sätt, det vill säga det går att återskapa den ursprungliga datan utifrån den komprimerade datan) och arkivering innebär att flera filer lagras i en enda fil. \href{http://en.wikipedia.org/wiki/Gzip}{Gzip} är ett annat alternativ som ofta används vid komprimering, framförallt i Linuxmiljöer, vilket generar filer med filändelsen \verb:.gz:. Nackdelen med denna är att gzip inte stödjer arkivering, vilket oftast görs med programmet tar, och således är det vanligt att se komprimerade filer med filändelsen \verb:.tar.gz:. 
+
+Zip stödjer både komprimering och arkivering, vilket är anledningen till att denna används. 
+
+\subsubsection{Process}
+Pseudokod: 
+\begin{verbatim}
+Class FileCompression
+	function zip(String[] sourceFiles, String zipFile){
+		Create zip file
+		for each source file in sourceFiles(
+			Read in soruce file
+			Compress source file
+			Add compressed file to zip file	
+		)
+	}
+\end{verbatim}
+
+\subsubsection{Data}
+Klassen använder sig av en buffer för indata samt en för utdata. Sökvägarna till filerna som ska komprimeras fås genom argumenten i metoden \verb:function zip(String[] sourceFiles, String zipFile):. För varje fil i indatan skapas en ny dataström som buffern använder. Datan som finns i buffern skrivs sedan till en speciell dataström för zip-filen: \verb:ZipOutputStream out:. För varje infil skapas även en \verb:ZipEntry entry: som specificerar var i zip-filens mappstruktur som den inlästa filen ska läggas. Den slutgiltiga zip-filen producerar ett arkiv med mappstrukturen:
+\begin{description}
+  \item[Screenshots] \hfill \\
+  	Skärmdumpar.
+  \item[Touch] \hfill \\
+  	JSON-filer med information om användarens fingerrörelser.
+  \item[Video] \hfill \\
+  	Videoinspelning av användaren.
+  \item[Video] \hfill \\
+  	Röstinspelning av användaren.
+\end{description}
