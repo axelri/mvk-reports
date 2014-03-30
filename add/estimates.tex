@@ -1,1 +1,13 @@
-\section{Feasability and Resource Estimates}
+\section{Genomförbarhetsstudie}
+
+\subsection{Minimum} % (fold)
+\label{sub:Minimum}
+
+Ett antal av de definierade komponenterna relaterar direkt till projektets ``minimum-behov''. Detta innebär att komponenterna är essentiella för att projektet ska uppnå utlovad funktionalitet. Komponenterna som faller inom denna kategori är \textit{skärminspelning}, \textit{rörelser} \textit{röstinspelning}, \textit{kamerainspelning}. Alla dessa har redan färdiga prototyper som fungerar väl på egen hand, kvarvarande uppgift är därför att sätta ihop modulerna till ett system. Androids interna systembeteende har visat sig försvåra vissa typer av externa anrop, exempelvis kan \textit{skärminspelning} i nuvarande form kollidera med Androids egna grafikkod och medföra krascher och/eller försämrad prestanda. Problem likt dessa har dock inte varit lika framträdande i övriga ``minimum-moduler''. Gruppen har därför goda skäl att tro att dessa moduler har möjlighet att fungera tillräckligt bra tillsammans för att önskvärd funktionalitet ska uppnås.
+
+\subsection{Standard} % (fold)
+\label{sub:Standard}
+
+Komponenter som sträcker sig utanför de allra mest grundläggande kraven, men ändå är viktiga för en godtagbar användarupplevelse, faller inom ``standard-behov''. Komponenterna inom denna kategori är övriga definierade komponenter, utom de som redan blivit indelade i ``minimum"-kategorin''. Även många komponenter i ``standard''-kategorin har färdiga prototyper som har visat sig fungera väl i avskiljda testmiljöer. Det är i denna kategori dock inte lika självklart att komponenter fungerar bra nog tillsammans för att uppnå tillräcklig prestanda. Speciellt projektets komponenter på server-sidan, \textit{databehandling} med \textit{rörelsegestaltning} och \textit{skärmgestaltning}, utför en tyngre sorts beräkningar som troligen behöver optimeras från den nuvarande prototyp-formen. Uppskattningsvis tar sammanställningen av en video av längd $n$ sekunder mellan $0,{}75n$ och $n$ sekunder på modern hårdvara. Detta kan vara ohållbart i en storskalig miljö med flera simultana användare.
+
+Värt att nämna är dock att dessa uppskattningar baserar sig på körning av enklare prototypmoduler, som har utvecklats av ett fåtal gruppmedlemmar och med låg arbetsprioritet. Då den ursprungliga projektplanen i PPD-1 har följts med avseende på mjukvaru-utveckling har flera gruppmedlemmar frigjorts för att kunna arbeta tillsammans på de komplexare ``standard-modulerna''. Detta bådar gott för att den dedikerade utvecklingstiden till dessa komponenter ska räcka för att optimera körningen tillräckligt.
