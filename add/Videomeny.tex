@@ -12,7 +12,7 @@ Menyn består av en knapp som betyder att videon ska spelas upp, en för att ta 
 Subkomponenter saknas.
 
 \subsubsection{Beroenden}
-Det måste existera en inspelad testsession samt att denna inspelning måste vara utpekad som den inspelning som ska visas i denna meny. Dessutom måste GUI;t visas för att denna komponent ska vara relevant.
+Det måste existera en inspelad testsession samt att denna inspelning måste vara utpekad som den inspelning som ska visas i denna meny. Dessutom måste GUI:t visas för att denna komponent ska vara relevant.
 
 \subsubsection{Gränssnitt}
 Vid knapptryckning skickas information om att den specifika knappen blivit tryckt till GUI.
@@ -22,12 +22,14 @@ Videomenyn behöver GUI för att fungera.
 
 \subsubsection{Referenser}
 Videomeyn är implementerad i Android och därav behövs kunskap om Android för att förstå komponenten.
-http://developer.android.com/reference/packages.html
+\url{http://developer.android.com/reference/packages.html}
 
 \subsubsection{Processer}
 För varje knapp tillskrivs följande listener:
+\begin{verbatim}
 If tryckt
 then gui.knapptryckt(denna_knapp)
+\end{verbatim}
 
 \subsubsection{Data}
 Videomenyn lagrar ingen intern data förutom det som följer genom användandet av Androids biblotek.
