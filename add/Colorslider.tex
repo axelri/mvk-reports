@@ -1,31 +1,31 @@
 \subsubsection{Typ}
-Java klass och xml-dokument
+Java-klass och xml-dokument
 
 \subsubsection{Syfte}
-URD-krav 4
-URD-krav 6
+URD-krav 4 \\
+URD-krav 6 \\
 Möjliggöra för användaren att välja färg för visualiseringen av tryckningar för testsessioner.
 
 \subsubsection{Funktionalitet}
-Colorslidern består av en utritad färggradient. Vid tryckning på denna gradient kommer den färg som trycktes att skickas vidare till GUI;t.
+Färgreglaget består av en utritad färggradient. Vid tryckning på denna gradient kommer den färg som trycktes att skickas vidare till GUI:t.
 
 \subsubsection{Underordnade Komponenter}
 Subkomponenter saknas.
 
 \subsubsection{Beroenden}
-GUI;t måste visas för att denna komponent ska vara relevant.
+GUI:t måste visas för att denna komponent ska vara relevant.
 
 \subsubsection{Gränssnitt}
-Genom att lägga till en listener till Colorslidern kommer denna komponent att skicka information om vilken färg som tryckts på till alla listeners. 
+Genom att lägga till en listener till färgreglaget kommer denna komponent att skicka information om vilken färg som tryckts på till alla listeners. 
 
 \subsubsection{Resurser}
-Det behövs något objekt som lagt till en listener till Colorslidern.
+Det behövs något objekt som lagt till en listener till färgreglaget.
 
 \subsubsection{Referenser}
 Inga externa dokument är nödvändiga.
 
 \subsubsection{Processer}
-Vid skapandet räknas en färggradient ut baserat på längden på slidern och lagras. Vid tryckning på colorsiden hämtas sedan färgen ut för det tryckta x-värdet och skickas till alla listeners.
+Vid skapandet räknas en färggradient ut baserat på längden på slidern och lagras. Vid tryckning på färgreglaget hämtas sedan färgen ut för det tryckta x-värdet och skickas till alla listeners.
 
 \subsubsection{Data}
 En lokal färggradient lagras.
