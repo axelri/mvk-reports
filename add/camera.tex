@@ -5,7 +5,7 @@ En modul som sköter videoinspelning från den främre kameran av testarens ansi
 Videoinspelning av ansiktet på den som testar applikationen är till för att ge en visuell bild av användaren samt att ytterligare ge information kring hur denna person upplever användargränsnittet på applikationen. Detta betyder att applikationsutvecklaren får mer information för att senare vidareutveckla sin produkt. Komponenter ämnar uppfylla kraven för Kamerainspelning (Se 3.1.3, URD-1).
 
 \subsubsection{Funktionalitet}
-Videoinspelning består utav 3 stycken klasser; Camera, MediaRecorder samt SurfaceView. Camera är det grundläggande API:t för att kontrollera kamerorna och används både för att ta bilder samt att spela in video. MediaRecorder klassen används för att spela in video från kameran. SurfaceView klassen visar en realtids förhandsvisning av vad kameran ser och visar det på skärmen. Den används alltså för att visa användaren vad kameran spelar in.
+Videoinspelning består utav tre stycken klasser; Camera, MediaRecorder samt SurfaceView. Camera är det grundläggande API:t för att kontrollera kamerorna och används både för att ta bilder samt att spela in video. MediaRecorder klassen används för att spela in video från kameran. SurfaceView klassen visar en realtids förhandsvisning av vad kameran ser och visar det på skärmen. Den används alltså för att visa användaren vad kameran spelar in.
 
 \subsubsection{Underordnade komponenter}
 Ljudinspelning.
@@ -14,7 +14,7 @@ Ljudinspelning.
 Den är inte beroende utav andra komponenter.
 
 \subsubsection{Gränssnitt}
-
+Gränssnittet fungerar så att när denna komponent anropas så startas en Preview för att visa vad som spelas in samt att kameran startar och spelar in film genom MediaRecorder som då producerar en videofil som innehåller video samt ljud från användaren under testet.
 
 \subsubsection{Resurser}
 För att kunna spela in med kameran så måste androidenheten först ha en framåtvänd kamera så att det går att spela in användarens ansikte under pågående test. Androidenheten bör också ha en nyare version av Android då alla funktioner kanske inte fungerar ifall enheten har en gammal version installerad.
@@ -63,4 +63,4 @@ Det är en ganska avancerad process att starta en videoinspelning och alla delar
 Detta är hela förhandlingsloppet för att spela in en video med Camera, MediaRecorder och SurfaceView klasserna i Ansroid.
 
 \subsubsection{Data}
-
+Modulen använder sig utav de tre klasserna Camera, MediaRecorder samt SurfaceView. Den behöver alla dessa tre för att skapa en video, dock så sker det mesta i MediaRecorder klassen. Här ges även en sökväg till vart filen ska sparas samt vad videon ska ha för inställningar. Detta styrs till sist genom en boolsk variabel som berättar ifall en video ska spelas in eller inte.
