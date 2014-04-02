@@ -1,4 +1,5 @@
 \section{Systemkontext}
+\includegraphics{UML3.jpg}
 Super Recorder är del av två externa system; Beta Familys serversida samt de applikationer som implementerar SDK:t. De applikationer som implementerar SDK:t anropar endast metoder för att ta fram och visa GUI:t emedan SDK:t endast anropar applikationerna för att hämta den nuvarande Activityn (vilket är ett centralt objekt för att kunna spela in applikationen). Då detta är den enda kontakten mellan dessa två system är denna relation väldigt loose couplad. 
 Gentemot Beta Familys server är det även där en mycket begränsad mängd kommunikation. Super Recorder skickar videoinformation i kombination med att användaren laddar upp en testsession samt verifierar inloggning när en användare vill logga in. 
 
