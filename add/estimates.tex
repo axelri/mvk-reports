@@ -11,3 +11,21 @@ Ett antal av de definierade komponenterna relaterar direkt till projektets ``min
 Komponenter som sträcker sig utanför de allra mest grundläggande kraven, men ändå är viktiga för en godtagbar användarupplevelse, faller inom ``standard-behov''. Komponenterna inom denna kategori är övriga definierade komponenter, utom de som redan blivit indelade i ``minimum"-kategorin''. Även många komponenter i ``standard''-kategorin har färdiga prototyper som har visat sig fungera väl i avskiljda testmiljöer. Det är i denna kategori dock inte lika självklart att komponenter fungerar bra nog tillsammans för att uppnå tillräcklig prestanda. Speciellt projektets komponenter på server-sidan, \textit{databehandling} med \textit{rörelsegestaltning} och \textit{skärmgestaltning}, utför en tyngre sorts beräkningar som troligen behöver optimeras från den nuvarande prototyp-formen. Uppskattningsvis tar sammanställningen av en video av längd $n$ sekunder mellan $0,{}75n$ och $n$ sekunder på modern hårdvara. Detta kan vara ohållbart i en storskalig miljö med flera simultana användare.
 
 Värt att nämna är dock att dessa uppskattningar baserar sig på körning av enklare prototypmoduler, som har utvecklats av ett fåtal gruppmedlemmar och med låg arbetsprioritet. Då den ursprungliga projektplanen i PPD-1 har följts med avseende på mjukvaru-utveckling har flera gruppmedlemmar frigjorts för att kunna arbeta tillsammans på de komplexare ``standard-modulerna''. Detta bådar gott för att den dedikerade utvecklingstiden till dessa komponenter ska räcka för att optimera körningen tillräckligt.
+
+\subsection{Tidsplan}
+\begin{figure}[H]
+\centering
+\begin{tabular}{ | l | l | l |}
+  \hline
+  \textbf{Systemmodul} & \textbf{Datum} & \textbf{Uppskattad tidsåtgång} \\ \hline
+  Mikrofon & 6/4 & 5h \\ \hline
+  Kamera & 6/4 & 10h  \\ \hline
+  Touch & 6/4 & 10h \\ \hline
+  GUI & 6/4 & 50h \\ \hline
+  Skärminspelning & 4/5 & 300h \\ \hline
+  Media & 4/5 & 300h \\ \hline
+  Transfer & 4/5 & 200h \\ \hline
+  Backend & 4/5 & 200h \\ \hline
+\end{tabular}
+\caption*{\textit{Komponent deadlines}}
+\end{figure}
