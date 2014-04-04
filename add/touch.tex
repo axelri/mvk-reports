@@ -25,7 +25,7 @@ När en inspelning startar börjar mobilen spara varje rörelsehändelse. Denna 
 \subsubsection{Beroenden}
 Rörelsehändelserna kan skrivas i stort sett oberoende av andra komponenter. För använda informationen behövs dock en överföringsdel. Säkerheten i Android gör att inga utomstående applikationer eller användare har tillgång till filen som skrivits. Därför måste filen skickas till servern inifrån applikationen. Vid testning har skrivningen skett till externt lagringsmedium (SD-kort) istället.
 
-Information som krävs är starttid för inspelningen samt själva rörelsehändelsen. Detta måste skickas från den activity som står för rörelsehändelsen.
+Information som krävs är starttid för inspelningen samt själva rörelsehändelsen. Detta måste skickas från den activity som står för rörelsehändelsen, vilket kan fås från basaktiviteten.
 \subsubsection{Gränssnitt}
 \includegraphics[scale=0.8]{TouchLogger.png}
 \subsubsection{Resurser}
