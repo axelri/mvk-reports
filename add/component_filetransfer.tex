@@ -20,24 +20,24 @@ Efter en att en användare har slutfört sin betatesinspelning så genereras dat
 Ett lagringssystem på framförallt serversidan krävs för att kunna spara all information som genereras av betatestarna. 
 
 \subsubsection{Referenser}
-En anslutning mellan applikation och servern skapas genom TCP/IP-protokollen. Mer information om detta finns på \url{http://en.wikipedia.org/wiki/Transmission_Control_Protocol}.
+En anslutning mellan applikation och servern skapas genom TCP/IP-protokollen. Se \ref{tcp} och \ref{ip} för mer information. 
 
-När en anslutning väl har etablerat används HTTP-protokollet, närmare bestämt en HTTP request med metoden POST för att skicka över en fil. Mer om HTTP-protokollet finns att läsa på \url{http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol}. 
+När en anslutning väl har etablerat används HTTP-protokollet, närmare bestämt en HTTP request med metoden POST för att skicka över en fil, enligt CRUD-principen (\ref{crud}). Mer om HTTP-protokollet finns i \ref{http}.
 
-Den specifika implementation av dessa protokoll görs genom de inbyggda biblioteken i Java med klassen \verb:HttpUrlConnection:. \url{http://developer.android.com/reference/java/net/HttpURLConnection.html}. 
+Den specifika implementation av dessa protokoll görs genom de inbyggda biblioteken i Java med klassen \verb:HttpUrlConnection:. 
 
 \subsubsection{Process}
 Pseudokod: 
 \begin{verbatim}
 Class FileTransfer
-	function send(String file){
+	public void send(String file){
 		Open connection to server
 		Read in file
 		Send file
 		Close connection to server
 	}
 	
-	function send(String[] files){
+	public void send(String[] files){
 		Open connection to server
 		for each file in files {
 			Read in file
