@@ -5,7 +5,7 @@ En Java-klass som tar en eller flera filer och komprimerar samt arkiverar dem ti
 När en betatestinspelning är slutförd genereras en mängd data som måste överföras till en server där den sammanställs för att sedan kunna presenteras för applikationsutvecklarna. Det är mer praktiskt att få all denna information i ett enda paket än att få alla filer skickade var för sig. Ju mindre filstorleken är desto mindre tid tar överföringen och mindre bandbredd används. Allt detta leder till att komprimering av data till en enda zip-fil utförs innan överföringen till servern sker. Detta relaterar till punkt 2.3.5 (sammansättning av media på serversidan) samt 2.3.6 (överföring) i URD:n. 
 
 \subsubsection{Funktionalitet}
-Klassen implementerar en publik metod \verb:zip(): som tar två parametrar: en lista av sökvägar till filerna som ska komprimeras samt en sökväg till den komprimerade filen. Metoden går då igenom listan av filer som ska komprimeras, komprimerar dem och lägger till dem i en zip-fil. 
+Klassen implementerar en publik metod \verb:zipFolder(): som tar två parametrar: en sökväg till mappen som ska komprimeras samt en sökväg till den komprimerade filen. Metoden går då rekursivt igenom alla filer och mappar, komprimerar dem och lägger till dem i en zip-fil. 
 
 \subsubsection{Underordnade komponenter}
 Inga underordnade komponenter
@@ -20,26 +20,48 @@ Efter en slutförd inspelning av betatestning av en applikation genereras en mä
 Lagringsutrymme krävs för den genererade zip-filen. 
 
 \subsubsection{Referenser}
-Att lagra datan i flertalet filer i enda enda, mindre fil kräver två steg: komprimering och arkivering. Komprimering leder till att en fil ockuperar mindre minnesutrymme (i detta fall på ett ickedestruktivt sätt, det vill säga det går att återskapa den ursprungliga datan utifrån den komprimerade datan) och arkivering innebär att flera filer lagras i en enda fil. \href{http://en.wikipedia.org/wiki/Gzip}{Gzip} är ett annat alternativ som ofta används vid komprimering, framförallt i Linuxmiljöer, vilket generar filer med filändelsen \verb:.gz:. Nackdelen med denna är att gzip inte stödjer arkivering, vilket oftast görs med programmet tar, och således är det vanligt att se komprimerade filer med filändelsen \verb:.tar.gz:. 
+Att lagra datan i flertalet filer i en enda, mindre fil kräver två steg: komprimering och arkivering. Komprimering leder till att en fil ockuperar mindre minnesutrymme (i detta fall på ett ickedestruktivt sätt, det vill säga det går att återskapa den ursprungliga datan utifrån den komprimerade datan) och arkivering innebär att flera filer lagras i en enda fil. \href{http://en.wikipedia.org/wiki/Gzip}{Gzip} är ett annat alternativ som ofta används vid komprimering, framförallt i Linuxmiljöer, vilket generar filer med filändelsen \verb:.gz:. Nackdelen med denna är att gzip inte stödjer arkivering, vilket oftast görs med programmet tar, och således är det vanligt att se komprimerade filer med filändelsen \verb:.tar.gz:. 
 
 Zip stödjer både komprimering och arkivering, vilket är anledningen till att denna används. 
 
 \subsubsection{Process}
 Pseudokod: 
 \begin{verbatim}
-Class FileCompression
-	function zip(String[] sourceFiles, String zipFile){
-		Create zip file
-		for each source file in sourceFiles(
-			Read in soruce file
-			Compress source file
-			Add compressed file to zip file	
-		)
+Class FileCompression {
+
+	private constructor for non-instantiability
+
+	public static  void zipFolder(String sourceFolderPath, String zipFilePath){
+		Open outputStream
+		addFolder(outputStream, sourceFolder, sourceFolder)
+		Close outputStream
 	}
+	
+	private static void addFolder(ZipOutputStream zos, String thisFilePath, String baseFolderPath){
+		File f = new File(thisFilePath)
+		
+		if(f is a folder){
+			if(f is a subfolder of baseFolder){
+				add f as a folder entry in the zip-file, keeping the folder structure with root in baseFolder
+				// Example: thisFilePath == ".../baseFolder/f1/f2/thisFolder"
+				// In the zip-file, the folder entry /f1/f2/thisFolder/ will be created
+			}
+			for(every subfile in folder f){
+				addFolder(zos, subfile, baseFolderPath)
+			}
+		} else {
+			// f is a file, not a folder
+			add f as a file entry in the zip-file, keeping the folder structure with root i baseFolder
+			// Example: thisFilePath == ".../baseFolder/f1/f2/thisFile"
+			// In the zip-file, the file entry /f1/f2/thisFile will be created
+		}
+
+	}
+}
 \end{verbatim}
 
 \subsubsection{Data}
-Klassen använder sig av en buffer för indata samt en för utdata. Sökvägarna till filerna som ska komprimeras fås genom argumenten i metoden \verb:function zip(String[] sourceFiles, String zipFile):. För varje fil i indatan skapas en ny dataström som buffern använder. Datan som finns i buffern skrivs sedan till en speciell dataström för zip-filen: \verb:ZipOutputStream out:. För varje infil skapas även en \verb:ZipEntry entry: som specificerar var i zip-filens mappstruktur som den inlästa filen ska läggas. Den slutgiltiga zip-filen producerar ett arkiv med mappstrukturen:
+Klassen skapar en dataström per fil för indata samt en buffer för zip-filen som utdata. Sökvägarna till filerna fås genom argumenten i metoden \verb:public static  void zipFolder(String sourceFolderPath, String zipFilePath):. För varje fil i indatan skapas en ny dataström som läser in filen och sedan skrivs fildatan till en speciell buffer för zip-filen: \verb:ZipOutputStream out:. För varje infil skapas även en \verb:ZipEntry entry: som specificerar var i zip-filens mappstruktur som den inlästa filen ska läggas. Den slutgiltiga zip-filen producerar ett arkiv med mappstrukturen:
 \begin{description}
   \item[Screenshots] \hfill \\
   	Skärmdumpar.
