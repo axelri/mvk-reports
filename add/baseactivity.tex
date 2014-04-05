@@ -5,16 +5,24 @@ Syftet med denna klass är att vara en mellanhand mellan applikationernas aktivi
 \subsubsection{Funktionalitet}
 Klassen är menad att användas som superklass i varje aktivitet. När en aktivitet startas kallas basaktivitetens funktion onResume() som sparar undan en referens till aktiviteten. När en aktivitet avslutas kallas basaktvitetens funktion onDestroy() som i sin tur sätter referensen till null. Sistnämnda är mycket viktigt för att undvika massiva minnesläckor.
 \subsubsection{Underordnade komponenter}
-Alla aktiviteter till applikationen är underordnade komponenter. Rörelse- och skärminspelning beror på den sparade referensen.
+Alla aktiviteter till applikationen är underordnade komponenter. 
 \subsubsection{Beroenden}
 Inga beroenden
 \subsubsection{Gränssnitt}
-
+Denna komponent har inget direkt gränssnitt förutom den sparade referensen. Rörelse- och skärminspelning beror på den sparade referensen.
 \subsubsection{Resurser}
 Klassen implementerar Activity från Android SDK.
 \subsubsection{Referenser}
-
+Grundläggande kunskap om Android underlättar förståelsen av kompontenten. Se http://developer.android.com
 \subsubsection{Process}
-
+Subkomponenterna, det vill säga testapplikationens aktiviteter, kallar på super.onResume() startar och super.onDestroy() i sina egna onResume() och onDestroy() funktioner. Dessa kallas när en aktivitet startar respektive avslutas. Vår basaktivitets kod kommer då att köras och kommer se ut ungefär som nedan.
+\begin{verbatim}
+protected void onResume() {
+		set currentActivity to thisActivity;
+}
+protected void ondestroy() {
+		set currentActivity to null;
+}
+\end{verbatim}
 \subsubsection{Data}
- 
+ Komponenten har inga lokala data eller strukturer.
