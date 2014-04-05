@@ -20,9 +20,9 @@ Efter en att en användare har slutfört sin betatesinspelning så genereras dat
 Ett lagringssystem på framförallt serversidan krävs för att kunna spara all information som genereras av betatestarna. 
 
 \subsubsection{Referenser}
-En anslutning mellan applikation och servern skapas genom TCP/IP-protokollen. Se \ref{tcp} och \ref{ip} för mer information. 
+En anslutning mellan applikation och servern skapas genom TCP/IP-protokollen. Se sektion~\ref{subsec:definitions} för mer information om TCP/IP. 
 
-När en anslutning väl har etablerat används HTTP-protokollet, närmare bestämt en HTTP request med metoden POST för att skicka över en fil, enligt CRUD-principen (\ref{crud}). Mer om HTTP-protokollet finns i \ref{http}.
+När en anslutning väl har etablerats används HTTP-protokollet, närmare bestämt en HTTP request med metoden POST för att skicka över en fil, enligt CRUD-principen. Mer om HTTP-protokollet och CRUD kan läsas om i sektion~\ref{subsec:definitions}
 
 Den specifika implementation av dessa protokoll görs genom de inbyggda biblioteken i Java med klassen \verb:HttpUrlConnection:. 
 
