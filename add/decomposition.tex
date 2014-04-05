@@ -1,1 +1,16 @@
-\subsection{Decomposition description}
+\subsection{Komponent beskrivning}
+SuperRecorder-SDK:t är utformat enligt <FIGURBETECKNING> \\
+
+Klassen SuperRecorder är den centrala klassen i SDK:t och behåller primär kontroll under hela SDK:ts scope. SuperRecorder-klassen initialiserar samtliga andra moduler inom SDK:t och all intern kommunikation inom SDK:t förmedlas via denna klass. \\
+
+GUI:t är den primära möjligheten för extern kommunikation till SDK:t. Genom GUI:t kan användaren ändra inställningar, starta/stoppa inspelning samt sända inspelning till servern. \\
+
+ScreenRecorder ansvarar för inspelning av de aktiviteter som utförs av test-applikationen. Klassen sparar inspelningen i form av en fil som kan returneras vid förfrågan från SuperRecorder-klassen. SuperRecorder-klassen kan även begära start/stopp av inspelning. I övrigt har ScreenRecorder inga publika/package metoder. \\
+
+TouchRecorder ansvarar för dokumentering av touch relevanta till de aktiviteter som utförs av test-applikationen. I övrigt är klassen extern sett att likställa med ScreenRecorder. \\
+
+CameraRecorder ansvarar för inspelning av frontkameran under körning av test-applikationen. I övrigt är klassen extern sett att likställa med ScreenRecorder. \\
+
+Sender sköter överföringen av media-filen till servern. \\
+
+På servern konverteras media-filen till lämpligt format för lagring och uppspelning.
