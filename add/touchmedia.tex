@@ -22,7 +22,20 @@ Modulen kräver en servermiljö med \textit{ImageMagick}, \textit{FFmpeg} och ti
 \subsubsection{Referenser}
 
 \subsubsection{Process}
-Modulen går igenom varje rörelserelaterad händelse i tur och ordning. För varje händelse ritas först händelsen upp i en bildruta med hjälp av bildbehandlings-biblioteket \textit{ImageMagick}. När händelsen finns representerad i en bitmap används \textit{FFmpeg} för att rita upp så många rutor som händelsen ska visas i filmen. Detta moment är mycket snarlikt processen i \nameref{sub:screenmedia}. När alla händelser har gåtts igenom skickas den slutgiltiga filmen ut. Med tillräckligt högupplösta loggar skapar processen en video med gott flöde.
+Modulen går igenom varje rörelserelaterad händelse i tur och ordning. För varje händelse ritas först händelsen upp i en bildruta med hjälp av bildbehandlings-biblioteket \textit{ImageMagick}. Denna process tar hänsyn till gamla events, till exempel ska ett ``touch down''-event målas på varje efterföljande bild tills ett ``touch move''- eller ``touch up''-event sker. När händelsen finns representerad i en bitmap används \textit{FFmpeg} för att rita upp så många rutor som händelsen ska visas i filmen. Detta moment är mycket snarlikt processen i \nameref{sub:screenmedia}. När alla händelser har gåtts igenom skickas den slutgiltiga filmen ut. Med tillräckligt högupplösta loggar skapar processen en video med gott flöde.
+
+\begin{verbatim}
+// begin without state
+// and video
+state := null
+video := null
+for event, interval in inData
+    image, state := drawEvent(event, state) 
+    frames := millisecsToFrames(interval)
+    video.appendFrames(image, frames)
+
+writeToFile(video)
+\end{verbatim}
 
 \subsubsection{Data}
 Modulen använder sig av två långlivade datastrukturer; en videobuffer och en kö med indata från loggarna. Varje element i indata behandlas och skapar en ny temporär datastruktur, en bitmap. När denna bitmap har skrivits korrekt antal gånger till slutet av videobuffern raderas den. När hela kön har gåtts igenom skrivs videobuffern över till hårddisken och processen är slutförd.
