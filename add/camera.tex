@@ -1,23 +1,27 @@
 \subsubsection{Typ}
-En modul som sköter videoinspelning från den främre kameran av testarens ansikte och sparar den till ett givet videoformat.
+En modul som sköter videoinspelning från den främre kameran av testarens ansikte och sparar den till ett givet videoformat samt sköter ljudinspelning och sparar den som given ljudfil.
 
 \subsubsection{Syfte}
 Videoinspelning av ansiktet på den som testar applikationen är till för att ge en visuell bild av användaren samt att ytterligare ge information kring hur denna person upplever användargränsnittet på applikationen. Detta betyder att applikationsutvecklaren får mer information för att senare vidareutveckla sin produkt. Komponenter ämnar uppfylla kraven för Kamerainspelning (Se 3.1.3, URD-1).
 
+Ändamålet med ljudinspelningen är att kunna spela in användarens röst under testning med SuperRecorder. Att höra användarens tankegångar under testning av användargränssnitt är högst önskvärt av apputvecklare. Komponenten ämnar uppfyllakravet Röstinspelning (Se 3.1.2, URD-1).
+
 \subsubsection{Funktionalitet}
-Videoinspelning består utav tre stycken klasser; Camera, MediaRecorder samt SurfaceView. Camera är det grundläggande API:t för att kontrollera kamerorna och används både för att ta bilder samt att spela in video. MediaRecorder klassen används för att spela in video från kameran. SurfaceView klassen visar en realtids förhandsvisning av vad kameran ser och visar det på skärmen. Den används alltså för att visa användaren vad kameran spelar in.
+Videoinspelning består utav tre stycken klasser; Camera, MediaRecorder samt SurfaceView. Camera är det grundläggande API:t för att kontrollera kamerorna och används både för att ta bilder samt att spela in video. MediaRecorder klassen används för att spela in video från kameran och ljud från mikrofonen. SurfaceView klassen visar en realtids förhandsvisning av vad kameran ser och visar det på skärmen. Den används alltså för att visa användaren vad kameran spelar in.
 
 \subsubsection{Underordnade komponenter}
-Ljudinspelning.
+Denna komponent har inga underordnade komponenter.
 
 \subsubsection{Beroenden}
 Den är inte beroende utav andra komponenter.
 
 \subsubsection{Gränssnitt}
-Gränssnittet fungerar så att när denna komponent anropas så startas en Preview för att visa vad som spelas in samt att kameran startar och spelar in film genom MediaRecorder som då producerar en videofil som innehåller video samt ljud från användaren under testet.
+Gränssnittet fungerar så att när denna komponent anropas så startas en Preview för att visa vad som spelas in samt att kameran startar och spelar in film och ljud genom MediaRecorder som då producerar en videofil som innehåller video samt ljud från användaren under testet.
 
 \subsubsection{Resurser}
-För att kunna spela in med kameran så måste androidenheten först ha en framåtvänd kamera så att det går att spela in användarens ansikte under pågående test. Androidenheten bör också ha en nyare version av Android då alla funktioner kanske inte fungerar ifall enheten har en gammal version installerad.
+För att kunna spela in med kameran så måste androidenheten först ha en framåtvänd kamera så att det går att spela in användarens ansikte under pågående test. Enheten behöver också ha en mikrofon för att spela in ljud. Androidenheten bör också ha en nyare version av Android då alla funktioner kanske inte fungerar ifall enheten har en gammal version installerad.
+
+Under 3.1.2 i URD-1 finns en lista över funktionsmässiga krav för röstinspelningen i SuperRecorder.
 
 \subsubsection{Referenser}
 Kraven för Kamerainspelningen kan hittas under 3.1.3 i URD-1 men för att få en mer översiktlig insikt i hur kameran fungerar så kan man gå in på länken nedanför för att läsa om Kamera API:et för Androidutveckling.
