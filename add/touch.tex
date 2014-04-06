@@ -25,6 +25,7 @@ Rörelsehändelserna kan skrivas i stort sett oberoende av andra komponenter. F�
 
 Information som krävs är starttid för inspelningen samt själva rörelsehändelsen. Detta måste skickas från den activity som står för rörelsehändelsen, vilket kan fås från basaktiviteten.
 \subsubsection{Gränssnitt}
+Komponentens gränssnitt utåt består av två metoder; record() och stopRecording() för att starta respektive avsluta inspelningen. \\
 \includegraphics[scale=1.0]{TouchLogger.pdf}
 \subsubsection{Resurser}
 Kravet är att det finns en viss mängd minne för datafilen som genereras. Eftersom det rör sig om en textfil blir den aldrig speciellt stor.
@@ -52,7 +53,7 @@ Event är den rörelsehändelse som ska spelas in och startTime är tidpunkten f
 
  För att avsluta inspelningen kallas metoden
  \begin{verbatim}
- tl.writeRecordToFile();
+ tl.stopRecording();
  \end{verbatim}
  vars syfte är att skriva datan till en textfil som sedan kan laddas upp till servern.
 \subsubsection{Data}
