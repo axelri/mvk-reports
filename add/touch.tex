@@ -6,10 +6,7 @@ På serversidan kommer olika delar kombineras för att generera en video som vis
 Komponenten ämnar uppfylla kravet ``Realtidsfingerrörelser'' (Se 3.2.4, URD-1).
 
 \subsubsection{Funktionalitet}
-När en inspelning startar börjar mobilen spara varje rörelsehändelse. Denna information sparas till en fil enligt JSON-standard. Exempel på den information som sparas är: \\
-\begin{verbatim}
-{timestamp=''1000'', interval=''17'', action=''up'', index=''0'', x=''310'', y=''670''}
-\end{verbatim} 
+När en inspelning startar börjar mobilen spara varje rörelsehändelse. Denna information sparas till en fil enligt JSON-standard.
 \textbf{Timestamp} är tiden i millisekunder sedan inspelningen startade. Detta används för att kunna synka rörelsehändelserna med videon.
 
 \textbf{Interval} är tiden sedan senaste rörelsehändelsen. Tiden anges i millisekunder.
@@ -21,6 +18,7 @@ När en inspelning startar börjar mobilen spara varje rörelsehändelse. Denna 
  \textbf{X och Y} är den position fingret har i X- och Y-led.
  
 \subsubsection{Underordnade komponenter}
+Komponenten saknar underordnade komponenter.
 
 \subsubsection{Beroenden}
 Rörelsehändelserna kan skrivas i stort sett oberoende av andra komponenter. För använda informationen behövs dock en överföringsdel. Säkerheten i Android gör att inga utomstående applikationer eller användare har tillgång till filen som skrivits. Därför måste filen skickas till servern inifrån applikationen. Vid testning har skrivningen skett till externt lagringsmedium (SD-kort) istället.
@@ -34,11 +32,12 @@ Kravet är att det finns en viss mängd minne för datafilen som genereras. Efte
 Denna komponent bygger på klassen MotionEvent.
 \url{http://developer.android.com/reference/android/view/MotionEvent.html}
 \subsubsection{Process}
+\includegraphics[scale=1.0]{TouchLoggerProcess.pdf} \\
 Vid initiering av en activity skapas ett TouchLogger-objekt. 
 \begin{verbatim}
 TouchLogger tl;
 \end{verbatim}
-I onCreate()-metoden initieras TouchLogger-objektet med parametern \textbf{this}.
+I onCreate()-metoden initieras TouchLogger-objektet med parametern \textbf{this}. Parametern är den nuvarande activity:n vilken krävs för att möjliggöra skrivning till fil \footnote{Vid skrivning till fil krävs en android.content.Context vilken fås ur den aktiva activity:n}.
 \begin{verbatim}
 tl = new TouchLogger(this);
 \end{verbatim}
