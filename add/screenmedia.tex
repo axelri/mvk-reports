@@ -20,6 +20,7 @@ Komponenten har ett enkelt gränssnitt mot det övriga systemet. Komponenten anr
 Modulen kräver en servermiljö med \textit{FFmpeg} och tillhörande kodbibliotek tillgängligt.
 
 \subsubsection{Referenser}
+Komponenten använder sig av \textit{FFmpeg}. Dokumentation finns på \url{http://www.ffmpeg.org/}.
 
 \subsubsection{Process}
 Med hjälp av data från \nameref{sub:dataprocessing} och ett antal fördefinerade parametrar såsom önskad bildfrekvens skapar modulen en uppspelningsbar video. Detta gör den genom att för varje skärmdump skapa en viss sekvens video, på det sätt som finns beskrivet i den medskickade tidsinformationen. Om till exempel den färdiga videon ska ha en bildfrekvens på 25 bilder per sekund, och vi har givet att en viss skärmdump ska visas i 2 sekunder, skriver modulen 50 rutor till videon med den aktuella skärmdumpen. Modulen går sedan vidare till nästa skärmdump, tills den har förlängt videon med korrekt antal bildrutor för alla tagna skärmdumpar.

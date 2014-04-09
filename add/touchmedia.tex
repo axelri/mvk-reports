@@ -20,6 +20,7 @@ Komponenten anropas med loggar för en applikationstestning. Komponenten matar s
 Modulen kräver en servermiljö med \textit{ImageMagick}, \textit{FFmpeg} och tillhörande kodbibliotek tillgängligt.
 
 \subsubsection{Referenser}
+Komponenten använder sig av \textit{ImageMagick} och \textit{FFmpeg}. Dokumentation finns på \url{http://www.imagemagick.org/} och \url{http://www.ffmpeg.org/}.
 
 \subsubsection{Process}
 Modulen går igenom varje rörelserelaterad händelse i tur och ordning. För varje händelse ritas först händelsen upp i en bildruta med hjälp av bildbehandlings-biblioteket \textit{ImageMagick}. Denna process tar hänsyn till gamla events, till exempel ska ett ``touch down''-event målas på varje efterföljande bild tills ett ``touch move''- eller ``touch up''-event sker. När händelsen finns representerad i en bitmap används \textit{FFmpeg} för att rita upp så många rutor som händelsen ska visas i filmen. Detta moment är mycket snarlikt processen i \nameref{sub:screenmedia}. När alla händelser har gåtts igenom skickas den slutgiltiga filmen ut. Med tillräckligt högupplösta loggar skapar processen en video med gott flöde.

@@ -22,6 +22,7 @@ Komponenten anropas en gång innan SuperRecorder kan exekvera, och har sedan ing
 Komponenten behöver hela källkoden för den Android-applikation som ska testas, alternativt en kompilerad version av Android-applikationen i körbar form.
 
 \subsubsection{Referenser}
+Komponenten använder sig eventuellt av \textit{apk-tool}. Dokumentation finns på \url{https://code.google.com/p/android-apktool/}.
 
 \subsubsection{Process}
 Processen är en sekventiell genomgång av källkod eller dekompilerad Android-bytekod. På ett antal ställen i koden läggs nya instruktioner till som anropar SuperRecorders programmoduler. Programmet kompileras om. Om allt gått väl är filen redo att användas på testarnas mobiltelefoner. Har ett fel uppstått redovisas detta för testbeställaren, som i sådana fall hänvisas till en manuell kodintegrering.
