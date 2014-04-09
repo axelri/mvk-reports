@@ -4,11 +4,12 @@
 \label{sec:projektplan}
 Till och med vecka 12 ligger två relativt tunga kurser parallellt med projektet. Därför kommer mindre tid kunna läggas på projektet då. Fokus läggs på rapporterna PPD1 och URD1 men även de lättare delarna av koden kommer färdigställas under den här tiden. Innan vecka 12 kan 10 timmar per person och vecka läggas på projektet, och efter vecka 12 beräknas 20 timmar per person och vecka kunna läggas, de sista veckorna möjligen mer.
 
-Vecka 13 och framåt kommer mycket mer tid läggas på koden. TIll att börja med ska skärminspelningen vara färdig till den 6/4. Sedan måste det jobbas fram ett sätt att komprimera media, och ett mindre backend-system att överföra inspelat data till. Till sist behövs en transfer-lösning. De sista punkterna kommer nog gå in i varandra en del, så de har alla samma deadline, 4/5, då all kod ska vara färdigställd. 
+Vecka 13 och framåt var planen att mycket mer tid skulle läggas på koden. Dock visade det sig att vi fått fel deadlines för ADD, PPD-2 och URD-2, och att det var dags att presentera och lämna in dem vecka 15 och 18. Vi fick därför lägga programmeringsdelarna på is några veckor till, eftersom alla behövde hjälpa till med ADDn. PPD-2 och URD-2 kräver mindre arbete och genomförs därför av mindre delar av projektgruppen, så de övriga gruppmedlemmarna kan fokusera på att programmera.
 
-Därefter är det dags att presentera och lämna in rapporterna ADD, PPD-2 och URD-2. Rapporterna kommer ha påbörjats parallellt med kodandet i April, därför kommer det inte krävas så mycket jobb för att färdigställa dem. Dessutom får de med arbetsprocessen om de skrivs kontinuerligt under projektets gång. Eftersom de ska spegla slutresultatet kommer de inte kunna bli klara innan projektet är klart. 
+Efter inlämningen av ADD och PPD-2 måste programmerandet verkligen ta fart. Många delar är redan klara, främst det som sker i själva telefonen, bland annat skärminspelning och GUI. Det som är kvar är att jobba fram ett sätt att komprimera media, ett mindre backend-system att överföra inspelat data till, och ett sätt att baka ihop en film på servern. Till sist behövs en transfer-lösning. Dessa punkter kommer nog gå in i varandra en del, så de har alla samma deadline, 4/5, då all kod ska vara färdigställd. 
 
-Deadline för all kod läggs den 4/5. Deadline för rapporterna och presentationsförberedelser läggs den 9/5. 
+
+Deadline för all kod läggs den 4/5. Deadline för presentationsförberedelser läggs den 9/5. 
 
 \begin{figure}[H]
 \centering
@@ -17,9 +18,9 @@ Deadline för all kod läggs den 4/5. Deadline för rapporterna och presentation
   \textbf{Deliverable} & \textbf{Deadline} & \textbf{Uppskattad tidsåtgång} \\ \hline
   PPD-1 & v.8 (19/2) & 100h \\ \hline
   URD-1 & v.10 (5/3) & 100h \\ \hline
-  ADD-1 & Kursens slut & 150h \\ \hline
-  PPD-2 & Kursens slut & 50h \\ \hline
-  URD-2 & Kursens slut & 50h \\ \hline
+  ADD-1 & v.15 (10/4) & 150h \\ \hline
+  PPD-2 & v.15 (10/4) & 50h \\ \hline
+  URD-2 & v.18 (30/4) & 50h \\ \hline
 \end{tabular}
 \caption*{\textit{Deliverables}}
 \end{figure}
@@ -28,17 +29,27 @@ Deadline för all kod läggs den 4/5. Deadline för rapporterna och presentation
 \centering
 \begin{tabular}{ | l | l | l |}
   \hline
-  \textbf{Systemmodul} & \textbf{Datum} & \textbf{Uppskattad tidsåtgång} \\ \hline
-  Mikrofon & 16/3 & 5h \\ \hline
-  Kamera & 16/3 & 10h  \\ \hline
-  Touch & 16/3 & 10h \\ \hline
-  GUI & 16/3 & 50h \\ \hline
-  Skärminspelning & 6/4 & 300h \\ \hline
-  Media & 4/5 & 300h \\ \hline
-  Transfer & 4/5 & 200h \\ \hline
-  Backend & 4/5 & 200h \\ \hline
+  \textbf{Systemmodul} & \textbf{Deadline} & \textbf{Uppskattad tidsåtgång} \\ \hline
+  GUI & 6/4 & 30h \\ \hline
+  GUI Support & 6/4 & 10h \\ \hline
+  Inloggningsmeny & 6/4 & 10h \\ \hline
+  Huvudmeny & 6/4 & 10h \\ \hline
+  Settingsmeny & 6/4 & 5h \\ \hline
+  Färgreglage & 6/4 & 5h \\ \hline
+  Rörelser & 6/4 & 10h \\ \hline
+  Rörelsegestaltning & 6/4 & 30h \\ \hline
+  Kamerainspelning & 6/4 & 20h \\ \hline
+  Ljudinspelning & 6/4 & 5h \\ \hline
+  Videomeny & 4/5 & 10h \\ \hline
+  Videolista & 4/5 & 40h \\ \hline
+  Basaktivitet & 4/5 & 50h \\ \hline
+  Databehandling & 4/5 & 50h \\ \hline
+  Skärminspelning & 4/5 & 300h  \\ \hline
+  Skärmgestaltning & 4/5 & 300h \\ \hline
+  Komprimering & 4/5 & 200h \\ \hline
+  Överföring & 4/5 & 200h \\ \hline
 \end{tabular}
-\caption*{\textit{Utveckling}}
+\caption*{\textit{Komponent-deadlines}}
 \end{figure}
 
 \begin{figure}[H]
@@ -129,7 +140,5 @@ Deadline för all kod läggs den 4/5. Deadline för rapporterna och presentation
   & Färdigställa PPD-2 &\\ \hline
   & Färdigställa URD-2 &\\ \hline
 \end{tabular}
-
-I schemat står alla aktiviteter som ska utföras under veckan. Vissa aktiviteter som utförs varje vecka står inte med, dessa är mötesprotokollsskrivning och rapportstyrning som William ansvarar för, projektstyrning som utförs av Paulina och styrning av programmeringsarbetet som utförs av Daniel. Det kommer med största sannolikhet även tillkomma mindre uppgifter. På grund av detta innebär inte de uppskattade timmarna i veckoschemat att alla i gruppen kommer att arbeta med just de uppgifter som står i schemat hela den tiden. Troligt är dock att de utan specifika ansvarsområden kommer ägna nästan all sin planerade tid åt de schemalagda aktiviteterna. 
 
 Det finns inte så mycket utrymme för projektet att ta längre tid än planerat. Men tiden som krävs för varje delmoment är uppskattad med god marginal, så det är sannolikt att projektet kommer hamna före schemat. Det finns även utrymme att spendera mer tid per vecka än planerat om det skulle behövas. Projektledaren kommer kontinuerligt att följa upp och justera tidsplaneringen så ingenting blir försenat. Det blir Chief Programmer’s uppgift att sätta upp delmål i programmeringsdelen och följa upp dessa. Projektledaren och Chief Programmer håller nära kontakt.

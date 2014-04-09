@@ -21,11 +21,11 @@ TestFairy riktar sig mot en internationell publik. All information finns på eng
 
 \subsubsection{Lookback}
 \label{lookback}
-Lookbacks lösning liknar på många sätt The Beta Familys. Företaget har i dagsläget bara stöd för iOS och är gratis under pågående betafasen\parencite{lookback}. Hur Lookback planerar att tjäna pengar framgår inte av deras hemsida. Till skillnad från TestFairy får testaren här möjlighet att filma sig själv medan hen använder appen och kan då komma med specifik återkoppling beroende på vad som händer på skärmen. The Beta Family har fortfarande en fördel i att man själv tillhandahåller testare medan Lookback förlitar sig på en tjänst vid namn TestFlight.
+Lookbacks lösning liknar på många sätt The Beta Familys. Företaget har i dagsläget bara stöd för iOS och är gratis under pågående betafasen\parencite{lookback}. Hur Lookback planerar att tjäna pengar framgår inte av deras hemsida. Till skillnad från TestFairy får testaren här möjlighet att filma sig själv medan hon använder appen och kan då komma med specifik återkoppling beroende på vad som händer på skärmen. The Beta Family har fortfarande en fördel i att man själv tillhandahåller testare medan Lookback förlitar sig på en tjänst vid namn TestFlight.
 
 Själva betatestet presenteras på ett grafiskt tilltalande sätt. Varje testning (vilken Lookback kallar \emph{experience}) har en tidslinje som visar vilken del av appen de är i, etiketter på testet (såsom ``\emph{app flow}'', ``\emph{power user}'', m.fl), en vy som visar hur de navigerar runt i appen samt en video på användaren. 
 
-Tjänsten är internationell i den mening att alla delar är på engelska. Inget hindrar dock testaren från att använda sig av sitt modersmål vid testning om detta är önskat av företaget. Eftersom Lookback främst riktar sig till utvecklare krävs en viss kunskapsnivå för att använda deras tjänst. Implementationen av SDK:n går snabbt och ska enligt utsago vara simpel men har man utvecklat en app kan det förutsättas att man är en avancerad användare med hyfsat goda kunskaper inom utvecklare.
+Tjänsten är internationell i den mening att alla delar är på engelska. Inget hindrar dock testaren från att använda sig av sitt modersmål vid testning om detta är önskat av företaget. Eftersom Lookback främst riktar sig till utvecklare krävs en viss kunskapsnivå för att använda deras tjänst. Implementationen av SDK:n går snabbt och ska enligt utsago vara simpel men har man utvecklat en app kan det förutsättas att man är en avancerad användare med hyfsat goda kunskaper inom applikationsutveckling.
 
 \subsubsection{Diverse appar som kräver root-access}
 \label{rootacc}
@@ -45,7 +45,7 @@ Androidfragmentering syftar till det faktum att Androidplattformen körs i olika
 \subsubsection{Application Sandboxing}
 \label{subsubsec:sandbox}
 Androidarkitekturen implementerar ``application sandboxing'' vilket innebär att olika applikationer inte kan interagera med varandra direkt.\parencite{sandbox} Av denna anledning är det en SDK som behöver utvecklas som sedan kan integreras med applikationen som behöver testas. En fristående applikation skulle inte ha tillräckligt mycket behörighet för att spela in skärmen på den applikationen som ska testas. Denna sandboxing medför även att tredjepartens applikationer som tangentbord och Google Maps inte kan spelas in. 
-Android har denna arkitektur på grund av säkerhetsskäl. En applikation som exempelvis har tillgång till tangentbordet skulle kunna registrera allt användaren skriver, vilket potentiellt skulle kunna inkludera lösenordet till dennes internetbank. 
+Android har denna arkitektur på grund av säkerhetsskäl. En applikation som exempelvis har tillgång till tangentbordet skulle kunna registrera allt användaren skriver, vilket potentiellt skulle kunna inkludera lösenordet till dennes internetbank. Om applikationen får tillgång till Google Maps skulle den kunna se var användaren befinner sig någonstans.
 
 \subsubsection{Metadata}
 \label{subsubsec:Metadata}

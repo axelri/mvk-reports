@@ -1,6 +1,7 @@
 \section{Riskbedömning}
 
 Vi bedömer att de största riskerna för projektet är följande:
+(En fullständig Risk Assessment Template finns som appendix)
 
 \subsection{Skärminspelningens prestanda är för låg}
 \label{subsec:screenrec}
@@ -10,4 +11,16 @@ I och med att skärminspelning inte är lika enkelt att utföra på Android som 
 Bristen på erfarenhet i gruppen kan betyda att vår planering inom vissa delområden är optimistiska bedömningar. Ingen i gruppen har någon större erfarenhet av mikrofon-, kamera- eller touchinspelning, men det har förmodats utifrån forskning inom de olika delområdena att dessa är de minst tidskrävande. Vår riskbedömning av skärminspelningen har lett till att vi planerat in mycket tid för delområdet. Skärminspelningsarbetet kan vara flexibelt till viss del då mycket av arbetet kommer bestå av att försöka optimera prestandan. Därmed kan risken med planeringen hanteras i senare delar av projektet om det skulle komma till att planeringen brister.
 
 \subsection{Applikationen blir för ointuitiv}
-Den befintliga iOS-versionen tar bara ett par minuter för utvecklaren att implementera. För testaren krävs därefter inte heller något större arbete för att spela in. Simpelheten i applikationen är viktigt och måste bevaras för Android-versionen för att TBFs kunder ska känna att det är värt att använda produkten. Några av gruppmedlemmarna har erfarenhet av GUI-utveckling och att uppskatta en rimlig tidsåtgång till delområdet är därmed inte helt omöjligt. Risken består dock av att bristen på erfarenhet inom Android leder till att det tar längre tid än uppskattat och för att hantera detta har arbetet med gränssnittet fått en stor tidsmarginal.
+För testaren krävs inte heller större arbete för att spela in ett test i den befintliga iOS-versionen. Simpelheten i applikationen är viktigt och måste bevaras för Android-versionen för att TBFs kunder ska känna att det är värt att använda produkten. Några av gruppmedlemmarna har erfarenhet av GUI-utveckling och att uppskatta en rimlig tidsåtgång till delområdet är därmed inte helt omöjligt. Risken består dock av att bristen på erfarenhet inom Android leder till att det tar längre tid än uppskattat och för att hantera detta har arbetet med gränssnittet fått en stor tidsmarginal.
+
+\subsection{Videosammansättningen tar för mycket serverresurser}
+Videosammansättningen sker på servrar, och uppskattas ta mellan 0.75n och n sekunder för en video av längd n. Detta kan vara ohållbart i en miljö med flera simultana användare. Vi har diskuterat serverkapacitet med kunden och ska jobba för att optimera sammansättningen.
+
+\subsection{Videosammansättningen är för svår att implementera}
+En annan risk som rör videosammansättningen är själva implementationen av den. Då gruppen inte har så stor erfarenhet av videosammansättning kan genomförandet bli svårt, och vi kanske inte kommer lyckas optimera sammansättningen tillräckligt mycket. Vi kommer i första hand fokusera på att implementera en fungerande videosammansättning, för att sedan om vi får tid se över optimeringsmöjligheter.
+
+\subsection{Testning}
+Det är inte säkert att gruppen kommer hinna hitta utomstående testare för SuperRecordern. Därför kommer de flesta tester förmodligen ske inom gruppen och kanske inte ge tillräckligt bra feedback. Men vår kund är ett företag som erbjuder testning av appar och bör därför kunna genomföra användartester på sina egna testare. Vi ska undersöka möjligheterna till samarbete på den här punkten.
+
+\subsection{SDK:t tar för lång tid att integrera}
+Den befintliga iOS-versionen tar bara ett par minuter för utvecklaren att implementera i appen som ska testas. Det har under projektets gång visat sig att det kommer bli mycket svårare med Android-versionen. Gruppen har flera olika idéer för hur implementationen ska bli lättare, men alla är ganska avancerade och kommer ta mycket tid att genomföra. Vi har bestämt oss för att inte prioritera detta utan ta det i mån av tid i slutet av projektet.
