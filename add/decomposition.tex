@@ -1,5 +1,12 @@
-\subsection{Komponent beskrivning}
-SuperRecorder-SDK:t är utformat enligt <FIGURBETECKNING> \\
+\subsection{Komponentbeskrivning}
+
+\begin{figure}
+\includegraphics{CrudeClassDiagram.pdf}
+\caption{Klassdiagram}
+\label{fig:CrudeClassDiagram}
+\end{figure}
+
+SuperRecorder-SDK:t är utformat enligt \ref{fig:CrudeClassDiagram}. \\
 
 Klassen SuperRecorder är den centrala klassen i SDK:t och behåller primär kontroll under hela SDK:ts scope. SuperRecorder-klassen initialiserar samtliga andra moduler inom SDK:t och all intern kommunikation inom SDK:t förmedlas via denna klass. \\
 
@@ -9,7 +16,7 @@ ScreenRecorder ansvarar för inspelning av de aktiviteter som utförs av test-ap
 
 TouchRecorder ansvarar för dokumentering av touch relevanta till de aktiviteter som utförs av test-applikationen. I övrigt är klassen extern sett att likställa med ScreenRecorder. \\
 
-CameraRecorder ansvarar för inspelning av frontkameran under körning av test-applikationen. I övrigt är klassen extern sett att likställa med ScreenRecorder. \\
+CameraRecorder ansvarar för inspelning av frontkameran och dess mikrofon under körning av test-applikationen. I övrigt är klassen extern sett att likställa med ScreenRecorder. \\
 
 Sender sköter överföringen av media-filen till servern. \\
 
